@@ -17,6 +17,6 @@ struct TelaDeCamadas: View{
     
 }
 
-#Preview {
-    telaDeCamadas()
+#Preview{
+    TelaDeCamadas()
 }
