@@ -5,32 +5,48 @@
 //  Created by found on 04/07/25.
 //
 
-struct Andar: Identifiable{
+
+struct Andar: Identifiable, Hashable{
     let id = UUID()
     
     init(nomeDaImagem: String){
-        self.imagem = nomeDaImagem
+        
+        self.nomeDaimagem = nomeDaImagem
     }
     
-    var imagem: String
+    var nomeDaimagem: String
+}
+struct example{
+    let andar: Andar = Andar(nomeDaImagem: "1")
 }
 
 import SwiftUI
 
 struct TelaDeCamadas: View{
     var andares: [Andar] = [Andar(nomeDaImagem: "2"), Andar(nomeDaImagem: "1")]
-    @State var imagemAtual: String
+    @State var andarAtual: Andar = example().andar
     
     var body: some View {
-        ZStack{
-            ForEach(andares){ andar in
-                Image(andar.imagem)
+        VStack{
+            Picker("Primeiro Andar", selection:$andarAtual){
+                ForEach(andares){
+                    Text($0.nomeDaimagem)
+                        .tag($0)
+                }
             }
+            
+            Image(andarAtual.nomeDaimagem)
+            
+//            ZStack{
+//                ForEach(andares){ andar in
+//                    Image(andar.nomeDaimagem)
+//                }
+//            }
         }
     }
     
 }
 
 #Preview{
-    TelaDeCamadas(imagemAtual: "1")
+    TelaDeCamadas(andarAtual: Andar(nomeDaImagem: "2"))
 }
