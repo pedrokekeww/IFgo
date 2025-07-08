@@ -25,7 +25,7 @@ struct IFgoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            peraClicavel()
         }
         .modelContainer(sharedModelContainer)
     }
