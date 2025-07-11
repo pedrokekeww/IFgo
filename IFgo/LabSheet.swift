@@ -7,7 +7,7 @@
 import SwiftUI
 import Foundation
 
-struct DetalhesLaboratorioView: View {
+struct LabSheet: View {
     let lab: Laboratorio
 
     var body: some View {
@@ -19,4 +19,15 @@ struct DetalhesLaboratorioView: View {
         .padding()
         .navigationTitle(lab.nome)
     }
+}
+
+#Preview{
+    LabSheet(lab: Laboratorio(
+        nome: "Lmc10",
+        andar: 2,
+        bloco: "Bloco de Pesquisa",
+        responsavel: "Cayque",
+        horario: "20:20",
+        descricao: "É um bloco de comedores de agua"
+    ))
 }

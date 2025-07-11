@@ -1,6 +1,16 @@
 import Foundation
 
 public struct Laboratorio: Codable, Identifiable {
+    init(nome: String, andar: Int, bloco: String, responsavel: String, horario: String, descricao: String){
+        self.nome = nome
+        self.andar = andar
+        self.bloco = bloco
+        self.responsavel = responsavel
+        self.horario = horario
+        self.descricao = descricao
+    }
+    
+    
     public var id: String { nome }
     public let nome: String
     public let andar: Int

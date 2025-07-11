@@ -29,7 +29,7 @@ struct ContentView: View {
                 // Se tiver selectedLab, apresenta a view com ele
                 if let lab = selectedLab
                 {
-                    DetalhesLaboratorioView(lab: lab)
+                    LabSheet(lab: lab)
                 } else
                 {
                     // Fallback, nunca deve acontecer
