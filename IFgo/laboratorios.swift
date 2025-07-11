@@ -15,6 +15,7 @@ public final class LaboratorioData {
 
     public let laboratorios: [Laboratorio]
 
+// json com os laboratorios do bloco de pesquisa
     private let jsonString = """
     [
         {
@@ -123,7 +124,7 @@ public final class LaboratorioData {
         }
     ]
     """
-
+//    Tenta decodificar o json, se conseguir, armazena os dados em `laboratorios`, caso contrário, inicializa `laboratorios` como um array vazio.
     public init() {
         let data = Data(jsonString.utf8)
         do {
