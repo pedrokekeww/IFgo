@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Salas: View{
+    @State var isPresented: Bool = false
+    @State var selectedLab = Laboratorio?
     var body: some View{
         ZStack{
             // região clicavel da LMG
@@ -15,8 +17,8 @@ struct Salas: View{
                 Color(.green)
                 Text("LMC")
             }.onTapGesture {
-                    print("hello, world")
-                }
+                print("hello, world")
+            }
             .padding()
             .buttonStyle(.borderedProminent)
             .offset(x: 40, y: -50)
@@ -27,21 +29,31 @@ struct Salas: View{
                 Color(.blue)
             }
             .onTapGesture {
-                    print("hello, cayque")
-                }
+                print("hello, cayque")
+            }
             .padding()
             .buttonStyle(.borderedProminent)
             .offset(x: 40, y: 80)
             .opacity(0.1)
             .frame(maxWidth: 110, maxHeight: 150)
+            NavigationStack
+            {
+                .sheet(isPresented: $isPresented)
+                {
+                    // Se tiver selectedLab, apresenta a view com ele
+                    if let lab = selectedLab
+                    {
+                        LabSheet(lab: lab)
+                    }
+                    
+                }
+            }
+            
+            
         }
         
-    
     }
-    
-    
 }
-
 #Preview {
     Salas()
 }
