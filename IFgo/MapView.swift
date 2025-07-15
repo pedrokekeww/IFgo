@@ -30,7 +30,7 @@ struct MapView: View {
         }
         .sheet(isPresented: $mostrarFrontView){
             FrontViewBP()
-                .presentationDetents([.medium])
+                .presentationDetents([.height(540)])
         }
     }
 }
