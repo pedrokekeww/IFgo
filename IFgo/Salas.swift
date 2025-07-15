@@ -30,6 +30,7 @@ struct Salas: View{
             }
             .onTapGesture {
                 print("hello, cayque")
+                isPresented = true
             }
             .padding()
             .buttonStyle(.borderedProminent)
@@ -38,7 +39,7 @@ struct Salas: View{
             .frame(maxWidth: 110, maxHeight: 150)
             NavigationStack
             {
-                .sheet(isPresented: $isPresented)
+                .sheet(isPresented: isPresented)
                 {
                     // Se tiver selectedLab, apresenta a view com ele
                     if let lab = selectedLab
