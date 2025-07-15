@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Salas: View{
     @State var isPresented: Bool = false
-    @State var selectedLab = Laboratorio?
+    @State private var selectedLab: Laboratorio?
     var body: some View{
         ZStack{
             // região clicavel da LMG
