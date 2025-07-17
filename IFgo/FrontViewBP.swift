@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FrontViewBP: View{
     // Pra deixar modular é só criar algumas variáveis
+    
     var body: some View{
         VStack(alignment: .center){
             Color.gray

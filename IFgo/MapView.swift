@@ -10,6 +10,9 @@ import SwiftData
 
 struct MapView: View {
     @State var mostrarFrontView: Bool = false
+    //Substituir andarAtual depois pela instancia da verdadeira AndarView
+    //Quando o botao for apertado
+    @State var andarAtual: String = ""
 
     var body: some View {
         NavigationStack{
@@ -27,6 +30,9 @@ struct MapView: View {
                     .offset(x: 24, y: 100)
                     
                 }
+                .overlay(){
+                    AndarView(nomeDoAndar: andarAtual)
+                }
         }
         .sheet(isPresented: $mostrarFrontView){
             FrontViewBP()
@@ -36,5 +42,5 @@ struct MapView: View {
 }
 
 #Preview {
-    MapView()
+    MapView(andarAtual: "")
 }

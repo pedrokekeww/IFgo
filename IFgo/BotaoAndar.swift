@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct BotaoAndar: View{
+    @Environment(\.dismiss) var fechar
     @State var andar: String
     @State var descricao: String 
     
@@ -26,7 +27,7 @@ struct BotaoAndar: View{
     }
     
     func printar(){
-        print("banana")
+        fechar()
     }
 }
 
