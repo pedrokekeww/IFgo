@@ -50,6 +50,6 @@ public struct zonaClicavel:View{
 
 
 #Preview {
-    zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala:"1)
+    zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala:"1")
 }
 
