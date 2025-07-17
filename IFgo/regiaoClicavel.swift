@@ -7,6 +7,13 @@
 //
 
 import SwiftUI
+struct zonaClicavel{
+    var x_offset = self.x_offset
+    var y_offset = self.y_offset
+    var w = self.w
+    var h = self.h
+    var destination = self.destination
+}
 
 struct regiaoClicavel: View{
     @State var goToAndar = false

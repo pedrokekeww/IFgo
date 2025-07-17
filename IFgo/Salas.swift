@@ -37,18 +37,18 @@ struct Salas: View{
             .offset(x: 40, y: 80)
             .opacity(0.1)
             .frame(maxWidth: 110, maxHeight: 150)
-            NavigationStack
-            {
-                .sheet(isPresented: isPresented)
-                {
-                    // Se tiver selectedLab, apresenta a view com ele
-                    if let lab = selectedLab
-                    {
-                        LabSheet(lab: lab)
-                    }
-                    
-                }
-            }
+//            NavigationStack
+//            {
+//               // .sheet(isPresented: $isPresented)
+//                {
+//                    // Se tiver selectedLab, apresenta a view com ele
+//                    if let lab = selectedLab
+//                    {
+//                        LabSheet(lab: lab)
+//                    }
+//                    
+//                }
+//            }
             
             
         }
