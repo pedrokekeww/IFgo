@@ -13,46 +13,8 @@ struct Salas: View{
     var body: some View{
         ZStack{
             // região clicavel da LMG
-            ZStack{
-                Color(.green)
-                Text("LMC")
-            }.onTapGesture {
-                print("hello, world")
-            }
-            .padding()
-            .buttonStyle(.borderedProminent)
-            .offset(x: 40, y: -50)
-            .opacity(0.1)
-            .frame(maxWidth: 110, maxHeight: 150)
-            // região clicavel da LAPISCO
-            ZStack{
-                Color(.blue)
-            }
-            .onTapGesture {
-                print("hello, cayque")
-                isPresented = true
-            }
-            .padding()
-            .buttonStyle(.borderedProminent)
-            .offset(x: 40, y: 80)
-            .opacity(0.1)
-            .frame(maxWidth: 110, maxHeight: 150)
-//            NavigationStack
-//            {
-//               // .sheet(isPresented: $isPresented)
-//                {
-//                    // Se tiver selectedLab, apresenta a view com ele
-//                    if let lab = selectedLab
-//                    {
-//                        LabSheet(lab: lab)
-//                    }
-//                    
-//                }
-//            }
-            
-            
+            zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala:"1")
         }
-        
     }
 }
 #Preview {

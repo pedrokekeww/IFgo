@@ -7,17 +7,14 @@
 //
 
 import SwiftUI
-struct zonaClicavel{
-    var x_offset = self.x_offset
-    var y_offset = self.y_offset
-    var w = self.w
-    var h = self.h
-    var destination = self.destination
-}
-
-struct regiaoClicavel: View{
+public struct zonaClicavel:View{
+    @State var x_offset: CGFloat
+    @State var y_offset: CGFloat
+    @State var width: CGFloat
+    @State var height: CGFloat
+    @State var sala: String
     @State var goToAndar = false
-    var body: some View{
+    public var body: some View{
         // Navigation view a fim de preparar o navigation link
         NavigationStack{
             // Empilhamento da imagem do mapa com os botões que serão posicionados
@@ -33,23 +30,26 @@ struct regiaoClicavel: View{
             // Estilização do botão, manipulavel e modular
                 .padding()
                 .buttonStyle(.borderedProminent)
-                .offset(x: 40, y: -50)
+                .offset(x: x_offset, y: y_offset)
                 .opacity(0.1)
-                .frame(maxWidth: 110, maxHeight: 150)
+                .frame(maxWidth: width, maxHeight: height)
                 .onTapGesture {
                     print("Bia")
                     goToAndar = true
                 }
+    
                 
                 
             }
             .navigationDestination(isPresented: $goToAndar) {
-                TelaDeCamadas(andarAtual: Andar(nomeDaImagem: "2"))
+                TelaDeCamadas(andarAtual: Andar(nomeDaImagem: "\(sala)"))
             }
         }
     }
 }
+
+
 #Preview {
-    regiaoClicavel()
+    zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala:"1)
 }
 

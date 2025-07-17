@@ -6,8 +6,8 @@
 //
 
 
-struct Andar: Identifiable, Hashable{
-    let id = UUID()
+public struct Andar: Identifiable, Hashable{
+    public let id = UUID()
     
     init(nomeDaImagem: String){
         
