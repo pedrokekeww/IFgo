@@ -1,33 +1,80 @@
-//
-//  detalhesLaboratorioView.swift
-//  IFgo
-//
-//  Created by found on 11/07/25.
-//
 import SwiftUI
 import Foundation
 
-struct LabSheet: View {
+struct LabSheet: View
+{
     let lab: Laboratorio
+    @Environment(\.dismiss) var dismiss
 
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Responsável: \(lab.responsavel)")
-            Text("Horário: \(lab.horario)")
-            Text("Descrição: \(lab.descricao)")
+    var body: some View
+    {
+        VStack(alignment: .leading, spacing: 0)
+        {
+            // Conteúdo principal da sheet
+            VStack(alignment: .leading, spacing: 15)
+            {
+                Text(lab.nome)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 5)
+
+                Divider()
+
+                Group
+                {
+                    HStack
+                    {
+                        Text("Bloco:")
+                            .fontWeight(.semibold)
+                        Text(lab.bloco)
+                    }
+                    HStack
+                    {
+                        Text("Andar:")
+                            .fontWeight(.semibold)
+                        Text("\(lab.andar)")
+                    }
+                    HStack
+                    {
+                        Text("Responsável:")
+                            .fontWeight(.semibold)
+                        Text(lab.responsavel)
+                    }
+                    HStack
+                    {
+                        Text("Horário:")
+                            .fontWeight(.semibold)
+                        Text(lab.horario)
+                    }
+                }
+                .font(.body)
+
+                Divider()
+
+                VStack(alignment: .leading, spacing: 5)
+                {
+                    Text("Descrição do Laboratório:")
+                        .fontWeight(.semibold)
+                    Text(lab.descricao)
+                        .font(.body)
+                }
+            }
+            .padding()
+
+            Spacer()
         }
-        .padding()
-        .navigationTitle(lab.nome)
+        .background(Color.white) // Fundo da sheet
+        .cornerRadius(16) // Cantos arredondados da sheet
     }
 }
 
 #Preview{
     LabSheet(lab: Laboratorio(
-        nome: "Lmc10",
+        nome: "LMC4",
         andar: 2,
         bloco: "Bloco de Pesquisa",
         responsavel: "Cayque",
-        horario: "20:20",
+        horario: "8h às 12h",
         descricao: "É um bloco de comedores de agua"
     ))
 }

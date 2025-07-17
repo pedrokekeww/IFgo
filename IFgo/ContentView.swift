@@ -26,15 +26,19 @@ struct ContentView: View {
             .navigationTitle("Laboratórios")
             .sheet(isPresented: $isPresented)
             {
-                // Se tiver selectedLab, apresenta a view com ele
                 if let lab = selectedLab
                 {
                     LabSheet(lab: lab)
+                        .presentationDetents([.medium])
+                        .presentationDragIndicator(.visible)
+                        .padding()
                 } else
                 {
-                    // Fallback, nunca deve acontecer
                     Text("Laboratório não encontrado")
+                        .presentationDetents([.medium])
+                        .presentationDragIndicator(.visible)
                         .padding()
+                        
                 }
             }
         }
@@ -59,8 +63,9 @@ struct ContentView: View {
         }
         else
         {
-            // Se nao achou: zera a sheet
+            // Se nao achou zera a sheet
             isPresented = false
+            
         }
     }
 }
