@@ -12,12 +12,12 @@ struct BotaoAndar: View{
     @Environment(\.dismiss) var fechar
     @State var andar: String
     @State var descricao: String
-    @ObservedObject var Andar: AndarAtual
+    @Binding var andarAtual: String
     
-    init(andar: String, descricao:String){
+    init(andar: String, descricao:String, andarAtual: Binding<String>){
         self.andar = andar
         self.descricao = descricao
-        self.Andar = AndarAtual(andarAtual: andar)
+        self._andarAtual = andarAtual
     }
     
     var body: some View{
@@ -31,11 +31,12 @@ struct BotaoAndar: View{
     }
     
     func printar(){
-        Andar.andarAtual = andar
+        andarAtual = andar
         fechar()
     }
 }
 
 #Preview{
-    BotaoAndar(andar: "1 andar", descricao: "LMC, LMC, LMC, LMC...")
+    @Previewable @State var andarAtual: String = ""
+    BotaoAndar(andar: "1 andar", descricao: "LMC, LMC, LMC, LMC...", andarAtual: $andarAtual)
 }

@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct AndarView: View{
-    @State var nomeDoAndar: String
-    init(nomeDoAndar: String){
-        self.nomeDoAndar = nomeDoAndar
+    @Binding var andarAtual: String
+    init(andarAtual: Binding<String>){
+        self._andarAtual = andarAtual
     }
     var body: some View{
-        Image("\(nomeDoAndar)")
+        Image("\(andarAtual)")
+            .resizable()
+        
     }
 }
 
 #Preview{
-    AndarView(nomeDoAndar: "1 andar")
+    @Previewable @State var andarAtual = "1 andar"
+    AndarView(andarAtual: $andarAtual)
 }
+
