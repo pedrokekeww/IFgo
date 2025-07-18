@@ -13,7 +13,8 @@ struct Laboratorio: Codable {
     let bloco: Bloco
     let responsavel, horario, descricao: String
     
-    static let allLabs: [Laboratorio] = Bundle.main.decode(file: "laboratorios")
+    static let allLabs: [Laboratorio] = Bundle.main.decode(file: "laboratorios.JSON")
+    static let sampleLab: Laboratorio = allLabs[0]
 }
 
 enum Bloco: String, Codable {

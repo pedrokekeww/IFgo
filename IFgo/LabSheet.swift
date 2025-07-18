@@ -9,26 +9,21 @@ import SwiftUI
 import Foundation
 
 struct LabSheet: View {
+    public var labs: [Laboratorio] = Laboratorio.allLabs
     let lab: Laboratorio
-
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Responsável: \(lab.responsavel)")
-            Text("Horário: \(lab.horario)")
-            Text("Descrição: \(lab.descricao)")
+        
+        NavigationStack{
+            ForEach(labs, id: \.nome) { lab in
+                Text("\(lab.nome)")
+            }
         }
-        .padding()
-        .navigationTitle(lab.nome)
     }
 }
 
-#Preview{
-    LabSheet(lab: Laboratorio(
-        nome: "Lmc10",
-        andar: 2,
-        bloco: "Bloco de Pesquisa",
-        responsavel: "Cayque",
-        horario: "20:20",
-        descricao: "É um bloco de comedores de agua"
-    ))
+struct LabSheet_Previews: PreviewProvider{
+    static var previews: some View {
+        LabSheet(lab: Laboratorio.sampleLab)
+    }
 }
