@@ -9,21 +9,21 @@ import SwiftUI
 import Foundation
 
 struct LabSheet: View {
-    public var labs: [Laboratorio] = Laboratorio.allLabs
     let lab: Laboratorio
-    
+
     var body: some View {
-        
-        NavigationStack{
-            ForEach(labs, id: \.nome) { lab in
-                Text("\(lab.nome)")
-            }
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Responsável: \(lab.responsavel)")
+            Text("Horário: \(lab.horario)")
+            Text("Descrição: \(lab.descricao)")
         }
+        .padding()
+        .navigationTitle(lab.nome)
     }
 }
 
 struct LabSheet_Previews: PreviewProvider{
     static var previews: some View {
-        LabSheet(lab: Laboratorio.sampleLab)
+        LabSheet(lab: Laboratorio.allLabs[0])
     }
 }

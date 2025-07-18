@@ -32,7 +32,7 @@ public struct zonaClicavel:View{
                     goToAndar = true
                     print("oi")
                 }
-            .navigationDestination(isPresented: $goToAndar) {
+                .sheet(isPresented: $goToAndar) {
                 //LabSheet(lab: sala)
             }
         }
