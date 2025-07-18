@@ -8,11 +8,21 @@
 import SwiftUI
 import SwiftData
 
+//Essa classe vai ser responsável por armazenar o andarAtual que vai ser mostrado
+//No mapa
+class AndarAtual: ObservableObject{
+    init (andarAtual: String){
+        self.andarAtual = andarAtual
+    }
+    @Published var andarAtual: String = ""
+}
+
 struct MapView: View {
     @State var mostrarFrontView: Bool = false
     //Substituir andarAtual depois pela instancia da verdadeira AndarView
     //Quando o botao for apertado
-    @State var andarAtual: String = ""
+    @ObservedObject var Andar = AndarAtual(andarAtual: "")
+//    @State var andarAtual: String = ""
 
     var body: some View {
         NavigationStack{
@@ -31,7 +41,7 @@ struct MapView: View {
                     
                 }
                 .overlay(){
-                    AndarView(nomeDoAndar: andarAtual)
+                    AndarView(nomeDoAndar: Andar.andarAtual)
                 }
         }
         .sheet(isPresented: $mostrarFrontView){
@@ -42,5 +52,5 @@ struct MapView: View {
 }
 
 #Preview {
-    MapView(andarAtual: "")
+    MapView()
 }

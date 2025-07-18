@@ -6,14 +6,18 @@
 //I
 import SwiftUI
 
+
+
 struct BotaoAndar: View{
     @Environment(\.dismiss) var fechar
     @State var andar: String
-    @State var descricao: String 
+    @State var descricao: String
+    @ObservedObject var Andar: AndarAtual
     
     init(andar: String, descricao:String){
         self.andar = andar
         self.descricao = descricao
+        self.Andar = AndarAtual(andarAtual: andar)
     }
     
     var body: some View{
@@ -27,6 +31,7 @@ struct BotaoAndar: View{
     }
     
     func printar(){
+        Andar.andarAtual = andar
         fechar()
     }
 }
