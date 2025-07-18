@@ -18,12 +18,7 @@ public struct zonaClicavel:View{
         // Navigation view a fim de preparar o navigation link
         NavigationStack{
             // Empilhamento da imagem do mapa com os botões que serão posicionados
-            ZStack(alignment: .leading) {
-                Image("1")
-                    .resizable()
-                    .ignoresSafeArea()
-                    .aspectRatio(contentMode: .fit)
-                    .border(.black)
+            
                 ZStack(alignment: .leading){
                     Color(.blue)
                 }
@@ -34,15 +29,11 @@ public struct zonaClicavel:View{
                 .opacity(0.1)
                 .frame(maxWidth: width, maxHeight: height)
                 .onTapGesture {
-                    print("Bia")
                     goToAndar = true
+                    print("oi")
                 }
-    
-                
-                
-            }
             .navigationDestination(isPresented: $goToAndar) {
-                TelaDeCamadas(andarAtual: Andar(nomeDaImagem: "\(sala)"))
+                TelaDeCamadas(andarAtual: Andar(nomeDaImagem: "1"))
             }
         }
     }
