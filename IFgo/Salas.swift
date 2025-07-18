@@ -11,7 +11,7 @@ struct Salas: View{
     var body: some View{
         ZStack{
             // região clicavel da LMG
-            zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala: 5, descricao: "LMG")
+            zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala: 2)
         }
     }
 }

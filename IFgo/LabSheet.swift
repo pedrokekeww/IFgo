@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 struct LabSheet: View {
-    let lab: Laboratorio
+    public let lab: Laboratorio
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
