@@ -13,12 +13,13 @@ struct LabSheet: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
+            Text("\(lab.nome)")
             Text("Responsável: \(lab.responsavel)")
             Text("Horário: \(lab.horario)")
             Text("Descrição: \(lab.descricao)")
         }
         .padding()
-        .navigationTitle(lab.nome)
+        .border(Color.gray)
     }
 }
 

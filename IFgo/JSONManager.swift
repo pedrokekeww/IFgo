@@ -8,12 +8,14 @@
 import Foundation
 
 struct Laboratorio: Codable {
+    public var id: String { nome }
     let nome: String
     let andar: Int
     let bloco: Bloco
     let responsavel, horario, descricao: String
     
     static let allLabs: [Laboratorio] = Bundle.main.decode(file: "laboratorios.JSON")
+    static let labIds: [String] = allLabs.map(\.nome)
 }
 
 enum Bloco: String, Codable {
