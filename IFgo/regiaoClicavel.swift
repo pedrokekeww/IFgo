@@ -33,7 +33,7 @@ public struct zonaClicavel:View{
                     print("oi")
                 }
             .navigationDestination(isPresented: $goToAndar) {
-                TelaDeCamadas(andarAtual: Andar(nomeDaImagem: "1"))
+                //LabSheet(lab: sala)
             }
         }
     }
@@ -41,6 +41,6 @@ public struct zonaClicavel:View{
 
 
 #Preview {
-    zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala:"1")
+  //  zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala: )
 }
 
