@@ -14,29 +14,27 @@ public struct zonaClicavel:View{
     @State var height: CGFloat
     @State var sala: Int
     @State var goToAndar = false
-    //var i: String = 0
-    //for i in
     
     public var body: some View{
-        // Navigation view a fim de preparar o navigation link
-            // Empilhamento da imagem do mapa com os botões que serão posicionados
             
-            ZStack(alignment: .center){
-                Color(.blue)
+        // Começo da zona Clicavel
+        ZStack(alignment: .center){
+            Color(.blue)
                 
-                // Estilização do botão, manipulavel e modular
-                    .padding()
-                    .buttonStyle(.borderedProminent)
-                    .offset(x: x_offset, y: y_offset)
-                    .opacity(0.2)
-                    .frame(maxWidth: width, maxHeight: height)
-                    .onTapGesture {
-                        goToAndar = true
-                    }
-                    .sheet(isPresented: $goToAndar){
-                        LabSheet(lab: Laboratorio.allLabs[sala])
-                    }
+            // Estilização da região
+            .padding()
+            .buttonStyle(.borderedProminent)
+            .offset(x: x_offset, y: y_offset)
+            .opacity(0.2)
+            .frame(maxWidth: width, maxHeight: height)
+            .onTapGesture {
+                goToAndar = true
+            }
+            .sheet(isPresented: $goToAndar){
+                LabSheet(lab: Laboratorio.allLabs[sala])
+            }
         }
+        // Fim da zona Clicavel
     }
 }
 
@@ -44,3 +42,4 @@ public struct zonaClicavel:View{
     zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala: 5)
 }
 
+// fazer uma função para cada andar com suas salas dentro da ZStack - ex: andar 1(){ zonaClicavel, zonaClicavel, para casa sala que tem no andar

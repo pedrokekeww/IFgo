@@ -48,7 +48,7 @@ struct TelaDeCamadas: View{
               }
               .frame(width:40, height: 40)
               .offset(x: 0, y:-350)
-              zonaClicavel(x_offset: -150, y_offset: -119, width: 100, height: 150, sala: 3)
+              zonaClicavel(x_offset: -115, y_offset: -56, width: 110, height: 150, sala: 3)
           }
     }
 }
