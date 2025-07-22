@@ -6,8 +6,8 @@
 //
 
 
-struct Andar: Identifiable, Hashable{
-    let id = UUID()
+public struct Andar: Identifiable, Hashable{
+    public let id = UUID()
     
     init(nomeDaImagem: String){
         
@@ -32,6 +32,7 @@ struct TelaDeCamadas: View{
     var body: some View {
           ZStack{
               Image("planoDeFundo")
+              
               Image(andarAtual.nomeDaimagem)
                   .resizable()
                   .frame(width: 400, height: 400)
@@ -47,6 +48,7 @@ struct TelaDeCamadas: View{
               }
               .frame(width:40, height: 40)
               .offset(x: 0, y:-350)
+              zonaClicavel(x_offset: -115, y_offset: -56, width: 110, height: 150, sala: 3)
           }
     }
 }

@@ -6,13 +6,20 @@
 //I
 import SwiftUI
 
+
+
 struct BotaoAndar: View{
+    //Botao do Andar modularizado, só precisa passar os parametros necessários
+    //que vai fazer um botao funcional
+    @Environment(\.dismiss) var fechar
     @State var andar: String
-    @State var descricao: String 
+    @State var descricao: String
+    @Binding var andarAtual: String
     
-    init(andar: String, descricao:String){
+    init(andar: String, descricao:String, andarAtual: Binding<String>){
         self.andar = andar
         self.descricao = descricao
+        self._andarAtual = andarAtual
     }
     
     var body: some View{
@@ -26,10 +33,12 @@ struct BotaoAndar: View{
     }
     
     func printar(){
-        print("banana")
+        andarAtual = andar
+        fechar()
     }
 }
 
 #Preview{
-    BotaoAndar(andar: "1 andar", descricao: "LMC, LMC, LMC, LMC...")
+    @Previewable @State var andarAtual: String = ""
+    BotaoAndar(andar: "1 andar", descricao: "LMC, LMC, LMC, LMC...", andarAtual: $andarAtual)
 }
