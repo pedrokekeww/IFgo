@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+// Aqui é puramente front-end/uso da struct do BotaoAndar que eu fiz antes
+// Acredito que é auto-explicativo
 struct FrontViewBP: View{
     // Pra deixar modular é só criar algumas variáveis
     @Binding var andarAtual: String
+    //Aqui ta conectando o andarAtual do MapView a essa view
     
     var body: some View{
         VStack(alignment: .center){

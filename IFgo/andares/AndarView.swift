@@ -13,10 +13,11 @@ struct AndarView: View{
         self._andarAtual = andarAtual
     }
     var body: some View{
-        Image("\(andarAtual)")
-            .resizable()
-        
-    }
+            
+            Image("\(andarAtual)")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        }
 }
 
 #Preview{

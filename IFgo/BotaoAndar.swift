@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct BotaoAndar: View{
+    //Botao do Andar modularizado, só precisa passar os parametros necessários
+    //que vai fazer um botao funcional
     @Environment(\.dismiss) var fechar
     @State var andar: String
     @State var descricao: String
