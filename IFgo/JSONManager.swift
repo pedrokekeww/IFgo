@@ -11,15 +11,13 @@ struct Laboratorio: Codable {
     public var id: String { nome }
     let nome: String
     let andar: Int
-    let bloco: Bloco
+    let bloco: String
     let responsavel, horario, descricao: String
     
     static let allLabs: [Laboratorio] = Bundle.main.decode(file: "laboratorios.JSON")
 }
 
-enum Bloco: String, Codable {
-    case bp = "BP"
-}
+
 
 typealias Welcome = [Laboratorio]
 
