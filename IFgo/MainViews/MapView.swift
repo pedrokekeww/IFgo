@@ -26,7 +26,8 @@ struct MapView: View {
     // var listaDeAndares: []
     // Fazer a struct andar e fazer isso ser modular
     // Na real é só fazer um botao que faz o andarAtual voltar a ser "
-
+    
+    @State var offset = CGSize.zero
     var body: some View {
         // Navigation Stack para poder abrir a sheet
         NavigationStack{
@@ -35,8 +36,22 @@ struct MapView: View {
                 Image("ex_top_BP")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .onTapGesture{
+                        mostrarFrontView = true
+                    }
                 if (andarAtual != ""){
                     AndarView(andarAtual: $andarAtual)
+                        .overlay{
+                            // PLACEHOLDER DE REGIAO CLICAVEL
+                            Button("            "){
+                                mostrarFrontView = true
+                            }
+                            .frame(width:80, height: 80)
+                            .border(.black, width:4)
+                            .background(.blue)
+                            .opacity(0.6)
+                            .offset(x: 24, y: 100)
+                        }
                     Button("Voltar"){
                         andarAtual = "";
                         // Isso faz com que pare de mostrar a imagem, ja que nao existe
@@ -47,17 +62,11 @@ struct MapView: View {
                     .tint(.red)
                 }
             }
-            .overlay{
-                // PLACEHOLDER DE REGIAO CLICAVEL
-                Button("            "){
-                    mostrarFrontView = true
-                }
-                .frame(width:80, height: 80)
-                .border(.black, width:4)
-                .background(.blue)
-                .opacity(0.6)
-                .offset(x: 24, y: 100)
-            }
+            .rotationEffect(.degrees(offset.width / 5.0))
+            .offset(x: offset.width * 5)
+            .gesture(
+                DragGesture()
+            )
         }
         .sheet(isPresented: $mostrarFrontView){
             //Para as outras views terem acesso a variavel andar Atual, precisei passa-la
