@@ -175,7 +175,6 @@
 				TargetAttributes = {
 					22E6E4082E0C670600D0D201 = {
 						CreatedOnToolsVersion = 16.0;
-						LastSwiftMigration = 1630;
 					};
 					22E6E41A2E0C670900D0D201 = {
 						CreatedOnToolsVersion = 16.0;
@@ -394,7 +393,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IFgo/Preview Content\"";
@@ -413,8 +411,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ifce-pdm1.IFgo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "IFgo/IFgo-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -425,7 +421,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IFgo/Preview Content\"";
@@ -444,7 +439,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ifce-pdm1.IFgo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "IFgo/IFgo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
