@@ -7,13 +7,16 @@
 //
 
 import SwiftUI
-public struct zonaClicavel:View{
+public struct zonaClicavel: View, Identifiable{
+    public var id: UUID = UUID()
+    
     @State var x_offset: CGFloat
     @State var y_offset: CGFloat
     @State var width: CGFloat
     @State var height: CGFloat
     @State var sala: Int
     @State var goToAndar = false
+
     
     public var body: some View{
             

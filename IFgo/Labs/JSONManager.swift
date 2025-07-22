@@ -19,8 +19,6 @@ struct Laboratorio: Codable, Identifiable{
 
 
 
-typealias Welcome = [Laboratorio]
-
 extension Bundle{
     func decode<T: Decodable> (file:String) -> T{
         guard let url = self.url(forResource: file, withExtension: nil) else{
