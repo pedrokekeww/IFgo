@@ -36,6 +36,9 @@ struct MapView: View {
                 Image("ex_top_BP")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .onTapGesture{
+                            mostrarFrontView = true
+                        }
                 if (andarAtual != ""){
                     AndarView(andarAtual: $andarAtual, ZonasClicaveis: $salasClicaveis)
                     Button("Voltar"){
@@ -55,17 +58,6 @@ struct MapView: View {
                     .opacity(0.5)
                     .offset(x: 24, y: 110)
                 }
-            }
-            .overlay{
-                // PLACEHOLDER DE REGIAO CLICAVEL
-                Button("            "){
-                    mostrarFrontView = true
-                }
-                .frame(width:80, height: 80)
-                .border(.black, width:4)
-                .background(.blue)
-                .opacity(0.1)
-                .offset(x: 24, y: 110)
             }
         }
         .sheet(isPresented: $mostrarFrontView){
