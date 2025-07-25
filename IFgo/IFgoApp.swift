@@ -10,11 +10,10 @@ import SwiftData
 
 @main
 struct IFgoApp: App {
-    
 
     var body: some Scene {
         WindowGroup {
-            MapView()
+            ContentView()
         }
     }
 }
