@@ -16,19 +16,24 @@ public struct zonaClicavel: View, Identifiable{
     @State var height: CGFloat
     @State var sala: Int
     @State var goToAndar = false
+    @State var nome: String
 
     
     public var body: some View{
             
         // Começo da zona Clicavel
         ZStack(alignment: .center){
+            
+            
             Color(.blue)
-                
+            Text("\(nome)")
+                .multilineTextAlignment(.center)
+        }
             // Estilização da região
             .padding()
             .buttonStyle(.borderedProminent)
             .offset(x: x_offset, y: y_offset)
-            .opacity(0.2)
+            .opacity(0.5)
             .frame(maxWidth: width, maxHeight: height)
             .onTapGesture {
                 goToAndar = true
@@ -39,8 +44,8 @@ public struct zonaClicavel: View, Identifiable{
         }
         // Fim da zona Clicavel
     }
-}
+
 
 #Preview {
-    zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala: 2)
+    zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala: 2, nome: "UGH")
 }

@@ -20,5 +20,5 @@ public struct andar: View{
 }
 
 #Preview{
-    andar(ZonasClicaveis: [zonaClicavel(x_offset: 100, y_offset: -100, width: 150, height: 120, sala: 2), zonaClicavel(x_offset: 100, y_offset: -100, width: 150, height: 120, sala: 3)])
+    andar(ZonasClicaveis: [zonaClicavel(x_offset: 100, y_offset: -100, width: 150, height: 120, sala: 2, nome: "LMC"), zonaClicavel(x_offset: 100, y_offset: -100, width: 150, height: 120, sala: 3, nome: "LMC")])
 }

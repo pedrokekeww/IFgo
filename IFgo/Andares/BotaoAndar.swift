@@ -47,5 +47,5 @@ struct BotaoAndar: View{
 #Preview{
     @Previewable @State var andarAtual: String = ""
     @Previewable @State var ZonasClicaveis: [zonaClicavel] = []
-    BotaoAndar(andar: "1 andar", descricao: "LMC, LMC, LMC, LMC...", salas: [zonaClicavel(x_offset: 100, y_offset: -100, width: 150, height: 150, sala: 3)], andarAtual: $andarAtual, ZonasClicaveis: $ZonasClicaveis)
+    BotaoAndar(andar: "1 andar", descricao: "LMC, LMC, LMC, LMC...", salas: [zonaClicavel(x_offset: 100, y_offset: -100, width: 150, height: 150, sala: 3, nome: "LMC")], andarAtual: $andarAtual, ZonasClicaveis: $ZonasClicaveis)
 }

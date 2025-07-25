@@ -46,6 +46,14 @@ struct MapView: View {
                     .offset(x: 10, y: -140)
                     .buttonStyle(.borderedProminent)
                     .tint(.red)
+                    Button("            "){
+                        mostrarFrontView = true
+                    }
+                    .frame(width:80, height: 80)
+                    .border(.black, width:4)
+                    .background(.blue)
+                    .opacity(0.5)
+                    .offset(x: 24, y: 110)
                 }
             }
             .overlay{
@@ -57,7 +65,7 @@ struct MapView: View {
                 .border(.black, width:4)
                 .background(.blue)
                 .opacity(0.1)
-                .offset(x: 24, y: 100)
+                .offset(x: 24, y: 110)
             }
         }
         .sheet(isPresented: $mostrarFrontView){
