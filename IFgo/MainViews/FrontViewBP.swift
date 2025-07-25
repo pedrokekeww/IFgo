@@ -45,7 +45,12 @@ struct FrontViewBP: View{
                                    ZonasClicaveis: $ZonasClicaveis)
                         BotaoAndar(andar: "2 andar",
                                    descricao: "LMC, LMC, LMC, LMC...",
-                                   salas: [zonaClicavel(x_offset: 100, y_offset: -100, width: 100, height: 100, sala: 1, nome: "NOME")],
+                                   salas:
+                                    [
+                                        zonaClicavel(x_offset: -110, y_offset: -10, width: 130, height: 200, sala: 0, nome: "LIA"),
+                                        zonaClicavel(x_offset: 63, y_offset: -35, width: 113, height: 152, sala: 1, nome: "LAPADA"),
+                                        zonaClicavel(x_offset: -19, y_offset: -35, width: 112, height: 153, sala: 4, nome: "HASH"),
+                                    ],
                                    andarAtual: $andarAtual,
                                    ZonasClicaveis: $ZonasClicaveis)
                         BotaoAndar(andar: "1 andar",
