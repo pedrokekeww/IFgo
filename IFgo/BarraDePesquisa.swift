@@ -1,5 +1,6 @@
 import SwiftUI
 import Foundation
+import SwiftData
 extension String {
     /// Remove acentos, ignora maiúsculas/minúsculas e espaços extras.
     var normalizedForSearch: String {
