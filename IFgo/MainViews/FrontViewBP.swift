@@ -30,17 +30,24 @@ struct FrontViewBP: View{
                         
                         BotaoAndar(andar: "5 andar",
                                    descricao: "Apple Developer Academy",
-                                   salas: [zonaClicavel(x_offset: 100, y_offset: -100, width: 100, height: 100, sala: 1, nome: "Sala 1")],
+                                   salas: [zonaClicavel(x_offset: 13, y_offset: -11, width: 377, height: 200, sala: 14, nome: "APPLE DEVELOPER ACADEMY (SANDBOX)")],
                                    andarAtual: $andarAtual,
                                    ZonasClicaveis: $ZonasClicaveis)
                         BotaoAndar(andar: "4 andar",
                                    descricao: "Apple Developer Academy",
-                                   salas: [zonaClicavel(x_offset: 100, y_offset: -100, width: 100, height: 100, sala: 1, nome: "nome")],
+                                   salas: [zonaClicavel(x_offset: 13, y_offset: -11, width: 377, height: 200, sala: 13, nome: "APPLE DEVELOPER ACADEMY (CAMPFIRE)")],
                                    andarAtual: $andarAtual,
                                    ZonasClicaveis: $ZonasClicaveis)
                         BotaoAndar(andar: "3 andar",
                                    descricao: "LMC, LMC, LMC, LMC...",
-                                   salas: [zonaClicavel(x_offset: 100, y_offset: -100, width: 100, height: 100, sala: 1, nome: "NOME")],
+                                   salas:
+                                    [
+                                        zonaClicavel(x_offset: -110, y_offset: -10, width: 130, height: 200, sala: 9, nome: "LDS"),
+                                        zonaClicavel(x_offset: -19, y_offset: -35, width: 112, height: 153, sala: 11, nome: "LPDS"),
+                                        zonaClicavel(x_offset: 63, y_offset: -35, width: 113, height: 152, sala: 10,
+                                            nome: "GDESTE"),
+                                        zonaClicavel(x_offset: 147, y_offset: -35, width: 112, height: 153, sala: 12, nome: "FOTÔ NICA")
+                                    ],
                                    andarAtual: $andarAtual,
                                    ZonasClicaveis: $ZonasClicaveis)
                         BotaoAndar(andar: "2 andar",

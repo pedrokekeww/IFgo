@@ -32,7 +32,7 @@ struct TelaDeCamadas: View{
     var body: some View {
           ZStack{
               
-              Image("3 andar")
+              Image("4 andar")
                   .resizable()
                   .aspectRatio(contentMode: .fit)
               // Picker com título e variável de estado que mostra seleção atual
@@ -49,7 +49,7 @@ struct TelaDeCamadas: View{
               }
               .frame(width:40, height: 40)
               .offset(x: 0, y:-350)
-              zonaClicavel(x_offset: 147, y_offset: -35, width: 112, height: 153, sala: 4, nome: "LAPISCO")
+              zonaClicavel(x_offset: 13, y_offset: -11, width: 377, height: 200, sala: 4, nome: "APPLE DEVELOPER ACADEMY (CAMPFIRE)")
           }
     }
 }

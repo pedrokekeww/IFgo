@@ -24,11 +24,10 @@ public struct zonaClicavel: View, Identifiable{
         // Começo da zona Clicavel
         ZStack(alignment: .center){
             
-            
-            Color(.blue)
             Text("\(nome)")
-                .multilineTextAlignment(.center)
-        }
+            Color(.blue)
+            
+                        }
             // Estilização da região
             .padding()
             .buttonStyle(.borderedProminent)
