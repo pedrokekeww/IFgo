@@ -50,6 +50,7 @@ struct FrontViewBP: View{
                                         zonaClicavel(x_offset: -110, y_offset: -10, width: 130, height: 200, sala: 0, nome: "LIA"),
                                         zonaClicavel(x_offset: 63, y_offset: -35, width: 113, height: 152, sala: 1, nome: "LAPADA"),
                                         zonaClicavel(x_offset: -19, y_offset: -35, width: 112, height: 153, sala: 4, nome: "HASH"),
+                                        zonaClicavel(x_offset: 147, y_offset: -35, width: 112, height: 153, sala: 4, nome: "LAPISCO")
                                     ],
                                    andarAtual: $andarAtual,
                                    ZonasClicaveis: $ZonasClicaveis)
