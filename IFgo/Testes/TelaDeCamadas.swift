@@ -32,7 +32,7 @@ struct TelaDeCamadas: View{
     var body: some View {
           ZStack{
               
-              Image("2 andar")
+              Image("3 andar")
                   .resizable()
                   .aspectRatio(contentMode: .fit)
               // Picker com título e variável de estado que mostra seleção atual
