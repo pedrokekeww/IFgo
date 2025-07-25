@@ -28,7 +28,9 @@ struct MapView: View {
     // Na real é só fazer um botao que faz o andarAtual voltar a ser "
     
     @State var offset = CGSize.zero
+    @State var lastOffset = CGSize.zero
     @State var scale = 1.0
+    @State var lastScale = 0.0
     var body: some View {
         // Navigation Stack para poder abrir a sheet
         NavigationStack{
@@ -64,12 +66,6 @@ struct MapView: View {
                 }
             }
         }
-        .sheet(isPresented: $mostrarFrontView){
-            //Para as outras views terem acesso a variavel andar Atual, precisei passa-la
-            //como binding para essas views.
-            FrontViewBP(andarAtual: $andarAtual)
-                .presentationDetents([.height(540)])
-        }
         // .rotationEffect(.degrees(offset.width / 10.0)) //Vai usar a variavel offset pra
         // servir como valor de rotacao e de offset
         .scaleEffect(scale)
@@ -77,16 +73,39 @@ struct MapView: View {
         .gesture(
             DragGesture()
                 .onChanged { gesture in
-                    offset = gesture.translation
+                    offset.width = lastOffset.width + gesture.translation.width
+                    offset.height = lastOffset.height + gesture.translation.height
+                }
+                .onEnded { _ in
+                    lastOffset.width = offset.width
+                    lastOffset.height = offset.height
                 }
                 .simultaneously(
                     with: MagnificationGesture(minimumScaleDelta: 0)
-                        .onChanged { value in
-                            scale = value
+                        .onChanged ({ value in
+                            withAnimation(.bouncy) {
+                                if (lastScale == 0){
+                                    scale = lastScale + value
+                                }
+                                else{
+                                    scale = lastScale + value - 1
+                                }
+                            }
+                        })
+                        .onEnded { _ in
+                            lastScale = scale
                         }
                 )
             
         )
+        .sheet(isPresented: $mostrarFrontView){
+            //Para as outras views terem acesso a variavel andar Atual, precisei passa-la
+            //como binding para essas views.
+            FrontViewBP(andarAtual: $andarAtual)
+                .presentationDetents([.height(540)])
+        }
+        
+ 
     }
     
 }
