@@ -38,7 +38,7 @@ struct TelaDeCamadas: View{
                   .frame(width: 400, height: 400)
                   .border(.black, width: 4)
               // Picker com título e variável de estado que mostra seleção atual
-              Picker("Primeiro Andar", selection:$andarAtual){
+              Picker("1 andar", selection:$andarAtual){
                   // Para cada andar, mostra o nome dele no Picker com o elemento Text
                   // e usa a propriedade tag pra mudar o valor da variável de estado
                   ForEach(andares){
@@ -46,7 +46,7 @@ struct TelaDeCamadas: View{
                           .tag($0)
                       andar(ZonasClicaveis: [
                         zonaClicavel(x_offset: -115, y_offset: -56, width: 110, height: 150, sala: 2),
-                        zonaClicavel(x_offset: 100, y_offset: -56, width: 110, height: 150, sala: 3)])
+                        zonaClicavel(x_offset: 100, y_offset: -56, width: 110, height: 150, sala: <#T##Int#>)])
                   }
               }
               .frame(width:40, height: 40)

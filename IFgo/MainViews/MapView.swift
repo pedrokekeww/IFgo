@@ -63,7 +63,7 @@ struct MapView: View {
         .sheet(isPresented: $mostrarFrontView){
             //Para as outras views terem acesso a variavel andar Atual, precisei passa-la
             //como binding para essas views.
-            FrontViewBP(andarAtual: $andarAtual)
+            FrontViewBP(andarAtual: $andarAtual, ZonasClicaveis: $salasClicaveis)
                 .presentationDetents([.height(540)])
         }
     }

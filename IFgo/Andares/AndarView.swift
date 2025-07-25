@@ -15,20 +15,20 @@ struct AndarView: View{
         self._ZonasClicaveis = ZonasClicaveis
     }
     var body: some View{
-            
+        ZStack{
             Image("\(andarAtual)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            
             ForEach(ZonasClicaveis){
             // seleciona o ultimo nó utilizado
                 $0
             }
         }
+    }
 }
 
 #Preview{
     @Previewable @State var andarAtual = "1 andar"
-    @Previewable  @State var ZonasClicaveis = [zonaClicavel(x_offset: 100, y_offset: -20, width: 150, height: 100, sala: 2)]
+    @Previewable  @State var ZonasClicaveis = [zonaClicavel(x_offset: 65, y_offset: -35, width: 115, height: 150, sala: 1)]
     AndarView(andarAtual: $andarAtual, ZonasClicaveis: $ZonasClicaveis)
 }
