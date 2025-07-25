@@ -37,6 +37,7 @@ struct MapView: View {
     @State var scale = 1.0
     @State var lastScale = 0.0
     var body: some View {
+        
         // Navigation Stack para poder abrir a sheet
         NavigationStack{
             // ZStack que vai empilhar um andar em cima da top-view do bloco
@@ -55,6 +56,8 @@ struct MapView: View {
                     .padding(.top, 4)
             }
             ZStack{
+                Color(red: 0.15, green: 0.15, blue: 0.15) // ajuste se necessário
+                           .ignoresSafeArea()
                 Image("ex_top_BP")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -81,6 +84,7 @@ struct MapView: View {
                     .offset(x: 24, y: 110)
                 }
             }
+            
             // .rotationEffect(.degrees(offset.width / 10.0)) //Vai usar a variavel offset pra
             // servir como valor de rotacao e de offset
             .scaleEffect(scale)
@@ -120,6 +124,7 @@ struct MapView: View {
             FrontViewBP(andarAtual: $andarAtual, ZonasClicaveis: $salasClicaveis)
                 .presentationDetents([.height(540)])
         }
+        
         
  
     }

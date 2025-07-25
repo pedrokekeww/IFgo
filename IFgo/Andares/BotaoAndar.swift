@@ -30,11 +30,11 @@ struct BotaoAndar: View{
     var body: some View{
         Button(action: atribuir_valores){
             Text("\(Text("\(andar) - ").bold())\(Text(descricao))")
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .frame(width: 300, height: 20, alignment: .leading)
         }
         .buttonStyle(.borderedProminent)
-        .tint(.white)
+        .tint(Color(white:0.20))
     }
     
     func atribuir_valores(){

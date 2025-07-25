@@ -17,13 +17,13 @@ struct FrontViewBP: View{
     
     var body: some View{
         VStack(alignment: .center){
-            Color.gray
+            Color.black
                 .ignoresSafeArea()
-                .opacity(0.2)
+                .opacity(0.90)
                 .overlay(){
                     VStack(alignment: .center){
                         Text("BLOCO DE PESQUISA - BP").bold()
-                        
+                            .foregroundColor(Color(white: 0.8))
                         Image("front_BP")
                             .resizable()
                             .aspectRatio(contentMode: .fit)

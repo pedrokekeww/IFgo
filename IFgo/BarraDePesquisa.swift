@@ -13,12 +13,11 @@ struct ContentView: View {
     @State private var showNotFoundAlert = false
 
     var body: some View {
-        NavigationStack {
-            // Envolve o MapView, que agora recebe binding e callback
             MapView(
                 searchText: $searchText,
                 onSearch: searchAndPresent
             )
+    
             .sheet(item: $selectedLab) { lab in
                 LabSheet(lab: lab)
                     .presentationDetents([.medium])
@@ -33,7 +32,6 @@ struct ContentView: View {
                 Text("Nenhum laboratório “\(searchText)” encontrado.")
             }
         }
-    }
 
     private func searchAndPresent(_ query: String) {
         let termo = query.normalizedForSearch
