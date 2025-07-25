@@ -39,9 +39,10 @@ struct ContentView: View {
             // Folha de detalhe: abre só se `selectedLab` != nil
             .sheet(item: $selectedLab) { lab in
                 LabSheet(lab: lab)
-                    .presentationDetents([.medium])
+                    .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.visible)
                     .padding()
+                    .presentationBackground(Color.black)
             }
             // Alerta quando não encontrou
             .alert("Laboratório não encontrado",

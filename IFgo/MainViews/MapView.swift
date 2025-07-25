@@ -31,6 +31,7 @@ struct MapView: View {
         // Navigation Stack para poder abrir a sheet
         NavigationStack{
             // ZStack que vai empilhar um andar em cima da top-view do bloco
+            
             ZStack{
                 Image("ex_top_BP")
                     .resizable()
