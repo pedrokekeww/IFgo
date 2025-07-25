@@ -20,6 +20,7 @@ struct BotaoAndar: View{
         self.andar = andar
         self.descricao = descricao
         self._andarAtual = andarAtual
+
     }
     
     var body: some View{

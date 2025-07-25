@@ -44,5 +44,3 @@ public struct zonaClicavel: View, Identifiable{
 #Preview {
     zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala: 2)
 }
-
-// fazer uma função para cada andar com suas salas dentro da ZStack - ex: andar 1(){ zonaClicavel, zonaClicavel, para casa sala que tem no andar

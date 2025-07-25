@@ -44,6 +44,9 @@ struct TelaDeCamadas: View{
                   ForEach(andares){
                       Text($0.nomeDaimagem)
                           .tag($0)
+                      andar(ZonasClicaveis: [
+                        zonaClicavel(x_offset: -115, y_offset: -56, width: 110, height: 150, sala: 2),
+                        zonaClicavel(x_offset: 100, y_offset: -56, width: 110, height: 150, sala: 3)])
                   }
               }
               .frame(width:40, height: 40)

@@ -12,6 +12,7 @@ import SwiftUI
 struct FrontViewBP: View{
     // Pra deixar modular é só criar algumas variáveis
     @Binding var andarAtual: String
+   
     //Aqui ta conectando o andarAtual do MapView a essa view
     
     var body: some View{
@@ -53,5 +54,6 @@ struct FrontViewBP: View{
 
 #Preview{
     @Previewable @State var andarAtual: String = ""
+    @Previewable @State var ZonasClicaveis: [zonaClicavel] = []
     FrontViewBP(andarAtual: $andarAtual)
 }
