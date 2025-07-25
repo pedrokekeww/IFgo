@@ -28,6 +28,7 @@ struct MapView: View {
     // Na real é só fazer um botao que faz o andarAtual voltar a ser "
     
     @State var offset = CGSize.zero
+    @State var scale = 1.0
     var body: some View {
         // Navigation Stack para poder abrir a sheet
         NavigationStack{
@@ -62,11 +63,6 @@ struct MapView: View {
                     .tint(.red)
                 }
             }
-            .rotationEffect(.degrees(offset.width / 5.0))
-            .offset(x: offset.width * 5)
-            .gesture(
-                DragGesture()
-            )
         }
         .sheet(isPresented: $mostrarFrontView){
             //Para as outras views terem acesso a variavel andar Atual, precisei passa-la
@@ -74,7 +70,25 @@ struct MapView: View {
             FrontViewBP(andarAtual: $andarAtual)
                 .presentationDetents([.height(540)])
         }
+        // .rotationEffect(.degrees(offset.width / 10.0)) //Vai usar a variavel offset pra
+        // servir como valor de rotacao e de offset
+        .scaleEffect(scale)
+        .offset(x: offset.width, y: offset.height)
+        .gesture(
+            DragGesture()
+                .onChanged { gesture in
+                    offset = gesture.translation
+                }
+                .simultaneously(
+                    with: MagnificationGesture(minimumScaleDelta: 0)
+                        .onChanged { value in
+                            scale = value
+                        }
+                )
+            
+        )
     }
+    
 }
 
 #Preview {
