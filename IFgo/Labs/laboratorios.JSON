@@ -16,6 +16,14 @@
         "bloco": "BP"
     },
     {
+        "nome": "LIMAR",
+        "andar": 1,
+        "bloco": "BP",
+        "responsavel": "Aline Carvalho de Oliveira",
+        "descricao": "Análises fisico-químicas de águas residuárias, análises hidráulicas e tratamento de água.",
+        "horario": "8:00 às 18:00"
+    },
+    {
         "nome": "LMG",
         "andar": 1,
         "bloco": "BP",
