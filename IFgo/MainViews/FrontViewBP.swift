@@ -1,10 +1,3 @@
-//
-//  frontViewBP.swift
-//  IFgo
-//
-//  Created by found on 15/07/25.
-//
-
 import SwiftUI
 
 // Aqui é puramente front-end/uso da struct do BotaoAndar que eu fiz antes
@@ -28,17 +21,20 @@ struct FrontViewBP: View{
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                         
-                        BotaoAndar(andar: "5 andar",
+                        BotaoAndar(nome: "5 andar",
+                                   andar: "4&5_andar",
                                    descricao: "Apple Developer Academy",
                                    salas: [zonaClicavel(x_offset: 13, y_offset: -11, width: 377, height: 200, sala: 14, nome: "APPLE DEVELOPER ACADEMY (SANDBOX)")],
                                    andarAtual: $andarAtual,
                                    ZonasClicaveis: $ZonasClicaveis)
-                        BotaoAndar(andar: "4 andar",
+                        BotaoAndar(nome: "4 andar",
+                                   andar: "4&5_andar",
                                    descricao: "Apple Developer Academy",
                                    salas: [zonaClicavel(x_offset: 13, y_offset: -11, width: 377, height: 200, sala: 13, nome: "APPLE DEVELOPER ACADEMY (CAMPFIRE)")],
                                    andarAtual: $andarAtual,
                                    ZonasClicaveis: $ZonasClicaveis)
-                        BotaoAndar(andar: "3 andar",
+                        BotaoAndar(nome: "3 andar",
+                                   andar: "2&3_andar",
                                    descricao: "LMC, LMC, LMC, LMC...",
                                    salas:
                                     [
@@ -46,11 +42,12 @@ struct FrontViewBP: View{
                                         zonaClicavel(x_offset: -19, y_offset: -35, width: 112, height: 153, sala: 11, nome: "LPDS"),
                                         zonaClicavel(x_offset: 63, y_offset: -35, width: 113, height: 152, sala: 10,
                                             nome: "GDESTE"),
-                                        zonaClicavel(x_offset: 147, y_offset: -35, width: 112, height: 153, sala: 12, nome: "FOTÔ NICA")
+                                        zonaClicavel(x_offset: 147, y_offset: -35, width: 112, height: 153, sala: 12, nome: "FOTÔNICA")
                                     ],
                                    andarAtual: $andarAtual,
                                    ZonasClicaveis: $ZonasClicaveis)
-                        BotaoAndar(andar: "2 andar",
+                        BotaoAndar(nome: "2 andar",
+                                   andar: "2&3_andar",
                                    descricao: "LMC, LMC, LMC, LMC...",
                                    salas:
                                     [
@@ -62,7 +59,8 @@ struct FrontViewBP: View{
                                     ],
                                    andarAtual: $andarAtual,
                                    ZonasClicaveis: $ZonasClicaveis)
-                        BotaoAndar(andar: "1 andar",
+                        BotaoAndar(nome: "1 andar",
+                                   andar: "1_andar",
                                    descricao: "LMC, LMC, LMC, LMC...",
                                    salas:
                                     [

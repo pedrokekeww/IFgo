@@ -1,9 +1,5 @@
-//
-//  ContentView.swift
-//  IFgo
-//
-//  Created by found on 25/06/25.
-//
+
+
 
 import SwiftUI
 import SwiftData
@@ -14,7 +10,7 @@ class AndarAtual: ObservableObject{
     init (andarAtual: String){
         self.andarAtual = andarAtual
     }
-    @Published var andarAtual: String = ""
+    @Published var andarAtual: String = "ex_top_BP"
 }
 
 struct MapView: View {
@@ -22,7 +18,7 @@ struct MapView: View {
     //Substituir andarAtual depois pela instancia da verdadeira AndarView
     //Quando o botao for apertado
     // A variável andar atual representa a string que vai ser passada pra classe Image
-    @State var andarAtual: String = ""
+    @State var andarAtual: String = "ex_top_BP"
     @State var salasClicaveis: [zonaClicavel] = []
     // var listaDeAndares: []
     // Fazer a struct andar e fazer isso ser modular
@@ -55,16 +51,16 @@ struct MapView: View {
                     .padding(.top, 4)
             }
             ZStack{
-                Image("ex_top_BP")
+                Image("\(andarAtual)")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .onTapGesture{
                         mostrarFrontView = true
                     }
-                if (andarAtual != ""){
+                if (andarAtual != "ex_top_BP"){
                     AndarView(andarAtual: $andarAtual, ZonasClicaveis: $salasClicaveis)
                     Button("Voltar"){
-                        andarAtual = "";
+                        andarAtual = "ex_top_BP";
                         // Isso faz com que pare de mostrar a imagem, ja que nao existe
                         // imagem com nome vazio
                     }
@@ -125,39 +121,3 @@ struct MapView: View {
     }
     
 }
-
-
-//import SwiftUI
-//
-////Aqui é a tela onde cayque vai estar testando o overlay
-//struct TelaDeCamadas: View{
-//    var andares: [Andar] = [Andar(nomeDaImagem: "2"), Andar(nomeDaImagem: "1")] // vetor com vários andares.
-//    @State var andarAtual: Andar = example().andar
-//
-//    var body: some View {
-//          ZStack{
-//              Image("planoDeFundo")
-//              Image(andarAtual.nomeDaimagem)
-//                  .resizable()
-//                  .frame(width: 400, height: 400)
-//                  .border(.black, width: 4)
-//              // Picker com título e variável de estado que mostra seleção atual
-//              Picker("Primeiro Andar", selection:$andarAtual){
-//                  // Para cada andar, mostra o nome dele no Picker com o elemento Text
-//                  // e usa a propriedade tag pra mudar o valor da variável de estado
-//                  ForEach(andares){
-//                      Text($0.nomeDaimagem)
-//                          .tag($0)
-//                  }
-//              }
-//              .frame(width:40, height: 40)
-//              .offset(x: 0, y:-350)
-//          }
-//    }
-//}
-//
-//
-//
-//#Preview{
-//    TelaDeCamadas(andarAtual: Andar(nomeDaImagem: "2"))
-//}
