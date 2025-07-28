@@ -8,7 +8,7 @@ struct LabSheet: View
 
     var body: some View
     {
-        VStack(alignment: .leading, spacing: 0)
+        VStack()
         {
             // Conteúdo principal da sheet
             VStack(alignment: .leading, spacing: 15)
@@ -17,6 +17,7 @@ struct LabSheet: View
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.bottom, 5)
+                    .colorInvert()
 
                 Divider()
 
@@ -24,57 +25,51 @@ struct LabSheet: View
                 {
                     HStack
                     {
-                        Text("Bloco:")
-                            .fontWeight(.semibold)
-                        Text("\(lab.bloco)")
+                        Text("\(lab.descricao)").fontWeight(.bold).font(.title3).foregroundColor(.gray)
                     }
+                    
                     HStack
                     {
-                        Text("Andar:")
+                        Image(systemName: "building.2").foregroundColor(.green).font(.system(size: 24))
+                        Text("Bloco:").colorInvert()
                             .fontWeight(.semibold)
-                        Text("\(lab.andar)")
+                        Text("\(lab.bloco)").foregroundColor(Color(white: 0.78))
+                        
                     }
-                    HStack
+                    HStack(spacing: 12)
                     {
-                        Text("Responsável:")
+                        Spacer().frame(width: 26)
+                        Text("Andar:").colorInvert()
                             .fontWeight(.semibold)
-                        Text(lab.responsavel)
+                        Text("\(lab.andar)").foregroundColor(Color(white: 0.78))
                     }
-                    HStack
+                    HStack(spacing: 12)
                     {
-                        Text("Horário:")
+                        Image(systemName: "person.badge.key") .foregroundColor(.green).font(.system(size: 24))
+                        Text("Responsável:").colorInvert()
                             .fontWeight(.semibold)
-                        Text(lab.horario)
+                        Text(lab.responsavel).foregroundColor(Color(white: 0.78))
+                    }
+                    HStack(spacing: 12)
+                    {
+                        Image(systemName: "clock").foregroundColor(.green).font(.system(size: 24))
+                        Text("Horário:").colorInvert()
+                            .fontWeight(.semibold)
+                        Text("Aberto").foregroundColor(.green).fontWeight(.bold)
+                    }
+                    HStack()
+                    {
+                        Spacer().frame(width: 39)
+                        Text(lab.horario).foregroundColor(Color(white:0.78))
                     }
                 }
                 .font(.body)
-
-                Divider()
-
-                VStack(alignment: .leading, spacing: 5)
-                {
-                    Text("Descrição do Laboratório:")
-                        .fontWeight(.semibold)
-                    Text(lab.descricao)
-                        .font(.body)
-                }
             }
             .padding()
 
             Spacer()
         }
-        .background(Color.white) // Fundo da sheet
-        .cornerRadius(16) // Cantos arredondados da sheet
+        .background(Color.black) // Fundo da sheet
+        .cornerRadius(12) // Cantos arredondados da sheet
     }
-}
-
-#Preview{
-    LabSheet(lab: Laboratorio(
-        nome: "LMC4",
-        andar: 2,
-        bloco: "Bloco de Pesquisa",
-        responsavel: "Cayque",
-        horario: "8h às 12h",
-        descricao: "É um bloco de comedores de agua"
-    ))
 }

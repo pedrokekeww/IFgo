@@ -23,6 +23,7 @@ struct ContentView: View {
                 LabSheet(lab: lab)
                     .presentationDetents([.medium])
                     .presentationDragIndicator(.visible)
+                    .presentationBackground(.black)
                     .padding()
             }
             .alert("Laboratório não encontrado",
@@ -48,4 +49,8 @@ struct ContentView: View {
             showNotFoundAlert = true
         }
     }
+}
+
+#Preview{
+    ContentView()
 }
