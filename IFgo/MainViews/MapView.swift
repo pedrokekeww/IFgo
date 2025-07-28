@@ -40,7 +40,7 @@ struct MapView: View {
         // Navigation Stack para poder abrir a sheet
         NavigationStack{
             // ZStack que vai empilhar um andar em cima da top-view do bloco
-            VStack {
+            VStack { // FAZER LOGO: BARRA DE PESQUISA COMO OVERLAY
                 BarraDePesquisaView(
                     searchText: $searchText,
                     onSearch: { query in
@@ -50,6 +50,9 @@ struct MapView: View {
                     },
                     placeholder: "Pesquisar"
                 )
+                if (searchText.isEmpty){
+                    LabHistoryView()
+                }
                 // Exibe resultado de busca auxiliar, se desejar
                 Text(searchResult)
                     .padding(.top, 4)
@@ -125,6 +128,7 @@ struct MapView: View {
     }
     
 }
+
 
 
 

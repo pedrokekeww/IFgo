@@ -1,6 +1,7 @@
 import SwiftUI
 import Foundation
 import SwiftData
+
 extension String {
     /// Remove acentos, ignora maiúsculas/minúsculas e espaços extras.
     var normalizedForSearch: String {
@@ -9,6 +10,7 @@ extension String {
     }
 }
 struct ContentView: View {
+    @Environment(\.modelContext) var modelContext
     @State private var searchText: String = ""
     @State private var selectedLab: Laboratorio?
     @State private var showNotFoundAlert = false
@@ -46,6 +48,7 @@ struct ContentView: View {
         if let match = Laboratorio.allLabs
             .first(where: { $0.nome.normalizedForSearch.contains(termo) }) {
             selectedLab = match
+            modelContext.insert(LabRef(labIndex: 0))
         } else {
             showNotFoundAlert = true
         }
@@ -54,4 +57,5 @@ struct ContentView: View {
 
 #Preview{
     ContentView()
+        .modelContainer(for: [LabRef.self])
 }

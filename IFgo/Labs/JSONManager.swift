@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftData
 
 struct Laboratorio: Decodable, Identifiable{
     public var id: String { nome }
@@ -16,16 +15,6 @@ struct Laboratorio: Decodable, Identifiable{
     var responsavel: String
     var horario: String
     var descricao: String
-    
-    init(nome: String, andar: Int, bloco: String, responsavel: String, horario: String, descricao: String){
-        self.nome = nome
-        self.andar = andar
-        self.bloco = bloco
-        self.responsavel = responsavel
-        self.horario = horario
-        self.descricao = descricao
-        
-    }
     
     static let allLabs: [Laboratorio] = Bundle.main.decode(file: "laboratorios.JSON")
 }
