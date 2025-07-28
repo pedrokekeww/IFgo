@@ -116,8 +116,6 @@ struct MapView: View {
             FrontViewBP(andarAtual: $andarAtual, ZonasClicaveis: $salasClicaveis)
                 .presentationDetents([.height(540)])
         }
-        
- 
     }
     
 }

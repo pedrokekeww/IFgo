@@ -81,9 +81,3 @@ struct FrontViewBP: View{
         
     }
 }
-
-#Preview{
-    @Previewable @State var andarAtual: String = ""
-    @Previewable @State var ZonasClicaveis: [zonaClicavel] = []
-    FrontViewBP(andarAtual: $andarAtual, ZonasClicaveis: $ZonasClicaveis)
-}

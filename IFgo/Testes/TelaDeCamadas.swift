@@ -53,10 +53,3 @@ struct TelaDeCamadas: View{
           }
     }
 }
-    
-
-
-#Preview{
-    TelaDeCamadas(andarAtual: Andar(nomeDaImagem: "1 andar"))
-    
-}
