@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2201615D2E37FB7400F1DCC6 /* .swift in Resources */ = {isa = PBXBuildFile; fileRef = 2201615C2E37FB6E00F1DCC6 /* .swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		22E6E41C2E0C670900D0D201 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2201615C2E37FB6E00F1DCC6 /* .swift */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swift; sourceTree = "<group>"; };
 		22E6E4092E0C670600D0D201 /* IFgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IFgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E6E41B2E0C670900D0D201 /* IFgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IFgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E6E4252E0C670900D0D201 /* IFgoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IFgoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +80,7 @@
 		22E6E4002E0C670600D0D201 = {
 			isa = PBXGroup;
 			children = (
+				2201615C2E37FB6E00F1DCC6 /* .swift */,
 				22E6E40B2E0C670600D0D201 /* IFgo */,
 				22E6E41E2E0C670900D0D201 /* IFgoTests */,
 				22E6E4282E0C670900D0D201 /* IFgoUITests */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2201615D2E37FB7400F1DCC6 /* .swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

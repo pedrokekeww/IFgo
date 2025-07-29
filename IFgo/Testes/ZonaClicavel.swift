@@ -40,6 +40,10 @@ public struct zonaClicavel: View, Identifiable{
             }
             .sheet(isPresented: $goToAndar){
                 LabSheet(lab: Laboratorio.allLabs[sala])
+                    .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
+                    .presentationBackground(.black)
+                    .padding()
             }
         }
         // Fim da zona Clicavel

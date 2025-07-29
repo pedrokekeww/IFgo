@@ -12,15 +12,16 @@ struct BarraDePesquisaView: View {
             TextField(placeholder, text: $searchText)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .onSubmit {
                     DispatchQueue.main.async { onSearch(searchText) }
                 }
         }
+        
         .padding(10)
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color(.white))
+                .fill(Color(.black))
         )
         .overlay(
             RoundedRectangle(cornerRadius: 12)
@@ -29,4 +30,5 @@ struct BarraDePesquisaView: View {
         .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
         .padding(.horizontal)
     }
+
 }

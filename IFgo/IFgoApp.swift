@@ -1,19 +1,13 @@
-//
-//  IFgoApp.swift
-//  IFgo
-//
-//  Created by found on 25/06/25.
-//
-
 import SwiftUI
-import SwiftData
+import UIKit
 
 @main
-struct IFgoApp: App {
+struct IFgoApp: App
+{
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }
