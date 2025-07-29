@@ -12,19 +12,26 @@ extension String {
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @State private var searchText: String = ""
-    @State private var selectedLab: Laboratorio?
+    @State var selectedLab: Laboratorio?
     @State private var showNotFoundAlert = false
+    @Query var historicoLabs: [LabRef]
+    @State var mostrarHistorico: Bool = false
 
     var body: some View {
         NavigationStack {
             // Envolve o MapView, que agora recebe binding e callback
             MapView(
+                mostrarHistorico: $mostrarHistorico,
                 searchText: $searchText,
-                onSearch: searchAndPresent
+                onSearch: searchAndPresent,
+                selectedLab: $selectedLab
             )
+            .onTapGesture {
+                mostrarHistorico = false
+            }
             .sheet(item: $selectedLab) { lab in
                 LabSheet(lab: lab)
-                    .presentationDetents([.medium])
+                    .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.visible)
                     .presentationBackground(.black)
                     .padding()
@@ -40,6 +47,7 @@ struct ContentView: View {
 
     private func searchAndPresent(_ query: String) {
         let termo = query.normalizedForSearch
+        mostrarHistorico = false
         selectedLab = nil
         showNotFoundAlert = false
 
@@ -48,7 +56,10 @@ struct ContentView: View {
         if let match = Laboratorio.allLabs
             .first(where: { $0.nome.normalizedForSearch.contains(termo) }) {
             selectedLab = match
-            modelContext.insert(LabRef(labIndex: 0))
+
+            if (!historicoLabs.contains(LabRef(labIndex: match.id))){
+                modelContext.insert(LabRef(labIndex: match.id))
+            }
         } else {
             showNotFoundAlert = true
         }
@@ -56,6 +67,7 @@ struct ContentView: View {
 }
 
 #Preview{
+    //@Previewable @State var mostrarHistorico = false
     ContentView()
         .modelContainer(for: [LabRef.self])
 }

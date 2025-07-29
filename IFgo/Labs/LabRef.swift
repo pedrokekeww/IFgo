@@ -6,9 +6,12 @@
 //
 
 import SwiftData
+import Foundation
+
 
 @Model
 class LabRef{
+    var date = Date()
     var labIndex: Int
     
     init(labIndex: Int){

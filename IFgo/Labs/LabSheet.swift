@@ -76,6 +76,7 @@ struct LabSheet: View
 
 #Preview{
     LabSheet(lab: Laboratorio(
+        id: 30,
         nome: "LMC 4",
         andar: 2,
         bloco: "Bloco de Pesquisa",

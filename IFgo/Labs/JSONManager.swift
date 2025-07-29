@@ -8,7 +8,7 @@
 import Foundation
 
 struct Laboratorio: Decodable, Identifiable{
-    public var id: String { nome }
+    public var id: Int
     var nome: String
     var andar: Int
     var bloco: String

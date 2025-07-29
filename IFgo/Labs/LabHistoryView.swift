@@ -9,13 +9,15 @@ import SwiftData
 
 struct LabHistoryView: View {
     @Environment(\.modelContext) var modelContext
-    @Query var historicoLabs: [LabRef]
+    @Query(sort: \LabRef.date, order: .reverse) var historicoLabs: [LabRef]
+    @Binding var selectedLab: Laboratorio?
     
     var body: some View{
             List{
-                ForEach(historicoLabs){ labRef in
+                ForEach(historicoLabs.prefix(3)){ labRef in
                     HStack{
                         Button("\(Laboratorio.allLabs[labRef.labIndex].nome)"){
+                            selectedLab = Laboratorio.allLabs[labRef.labIndex]
                             
                         }
                         Spacer()
@@ -28,11 +30,14 @@ struct LabHistoryView: View {
 
                 }
             }
+            .scrollContentBackground(.hidden)
+            .id(historicoLabs.count)
     }
     
 }
 
 #Preview{
-    LabHistoryView()
+    @Previewable @State var selectedLab: Laboratorio? = Laboratorio.allLabs[0]
+    LabHistoryView(selectedLab: $selectedLab)
         .modelContainer(for: [LabRef.self])
 }

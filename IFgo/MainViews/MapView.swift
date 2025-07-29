@@ -28,9 +28,11 @@ struct MapView: View {
     // Fazer a struct andar e fazer isso ser modular
     // Na real é só fazer um botao que faz o andarAtual voltar a ser "
     
+    @Binding var mostrarHistorico: Bool
     @Binding var searchText: String
     @State private var searchResult: String = ""
     let onSearch: (String) -> Void
+    @Binding var selectedLab: Laboratorio?
     
     @State var offset = CGSize.zero
     @State var lastOffset = CGSize.zero
@@ -40,23 +42,7 @@ struct MapView: View {
         // Navigation Stack para poder abrir a sheet
         NavigationStack{
             // ZStack que vai empilhar um andar em cima da top-view do bloco
-            VStack { // FAZER LOGO: BARRA DE PESQUISA COMO OVERLAY
-                BarraDePesquisaView(
-                    searchText: $searchText,
-                    onSearch: { query in
-                        // Atualiza texto de resultado, opcional
-                        // Dispara callback principal para abrir LabSheet
-                        onSearch(query)
-                    },
-                    placeholder: "Pesquisar"
-                )
-                if (searchText.isEmpty){
-                    LabHistoryView()
-                }
-                // Exibe resultado de busca auxiliar, se desejar
-                Text(searchResult)
-                    .padding(.top, 4)
-            }
+    
             ZStack{
                 Image("ex_top_BP")
                     .resizable()
@@ -116,6 +102,30 @@ struct MapView: View {
                     )
                 
             )
+        }
+        .overlay{
+            ZStack{
+                if (searchText.isEmpty && mostrarHistorico){
+                    LabHistoryView(selectedLab: $selectedLab)
+                        .offset(y:190)
+                }
+                BarraDePesquisaView(
+                    mostrarHistorico: $mostrarHistorico,
+                    searchText: $searchText,
+                    onSearch: { query in
+                        // Atualiza texto de resultado, opcional
+                        // Dispara callback principal para abrir LabSheet
+                        onSearch(query)
+                    },
+                    placeholder: "Pesquisar"
+                ).onTapGesture {
+                    mostrarHistorico = true
+                }
+                // Exibe resultado de busca auxiliar, se desejar
+                Text(searchResult)
+                    .padding(.top, 4)
+            }
+            .offset(y:-300)
         }
         .sheet(isPresented: $mostrarFrontView){
             //Para as outras views terem acesso a variavel andar Atual, precisei passa-la
