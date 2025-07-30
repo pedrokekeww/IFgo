@@ -78,12 +78,13 @@ struct MapView: View {
                             }
                         if (andarAtual != "ex_top_BP"){
                             AndarView(andarAtual: $andarAtual, ZonasClicaveis: $salasClicaveis)
-                            Button("Voltar"){
+                            Image(systemName: "chevron.left")
+                                .onTapGesture{
                                 andarAtual = "ex_top_BP";
                                 // Isso faz com que pare de mostrar a imagem, ja que nao existe
                                 // imagem com nome vazio
                             }
-                            .offset(x: 10, y: -140)
+                            .offset(x: -150, y: -250)
                             .buttonStyle(.borderedProminent)
                             .tint(.red)
                             Button("            "){
