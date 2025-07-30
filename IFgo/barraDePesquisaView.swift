@@ -8,11 +8,11 @@ struct BarraDePesquisaView: View {
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-                .foregroundColor(.secondary)
+                .foregroundColor(.gray)
             TextField(placeholder, text: $searchText)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
-                .foregroundColor(.primary)
+                .foregroundColor(.white)
                 .onSubmit {
                     DispatchQueue.main.async { onSearch(searchText) }
                 }
@@ -20,11 +20,11 @@ struct BarraDePesquisaView: View {
         .padding(10)
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color(.systemGray6))
+                .fill(Color(.black))
         )
         .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color(.secondarySystemFill), lineWidth: 1)
+                .stroke(Color(.white), lineWidth: 1)
         )
         .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
         .padding(.horizontal)

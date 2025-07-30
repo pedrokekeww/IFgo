@@ -23,13 +23,19 @@ struct BotaoAndar: View{
     }
     
     var body: some View{
+//        Button(action: atribuir_valores){
+//            Text("\(Text("\(nome) - ").bold())\(Text(descricao))")
+//                .foregroundColor(.black)
+//                .frame(width: 300, height: 20, alignment: .leading)
+//        }
         Button(action: atribuir_valores){
-            Text("\(Text("\(nome) - ").bold())\(Text(descricao))")
-                .foregroundColor(.black)
-                .frame(width: 300, height: 20, alignment: .leading)
-        }
-        .buttonStyle(.borderedProminent)
-        .tint(.white)
+                    Text("\(Text("\(nome) - ").bold())\(Text(descricao))")
+                        .foregroundColor(.white)
+                        .frame(width: 300, height: 20, alignment: .leading)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(Color(white:0.20))
+ 
     }
     
     func atribuir_valores(){
