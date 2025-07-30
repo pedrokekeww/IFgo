@@ -106,12 +106,15 @@ struct MapView: View {
         .overlay{
             ZStack{
                 if (searchText.isEmpty && mostrarHistorico){
-                    
-                    LabHistoryView(selectedLab: $selectedLab)
-//                        .onTapGesture{
-//                            
-//                        }
-                        .offset(y:190)
+                    ZStack{
+                        LabHistoryView(selectedLab: $selectedLab)
+                            .offset(y:190)
+                        Button(action: {
+                            mostrarHistorico = true
+                        }) {
+                            Color.clear
+                        }
+                    }
                 }
                 BarraDePesquisaView(
                     searchText: $searchText,
