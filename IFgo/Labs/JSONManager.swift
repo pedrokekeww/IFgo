@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Laboratorio: Codable, Identifiable{
+struct Laboratorio: Codable, Identifiable, Hashable{
     public var id: String { nome }
     let nome: String
     let andar: Int

@@ -26,9 +26,3 @@ struct AndarView: View{
         }
     }
 }
-
-#Preview{
-    @Previewable @State var andarAtual = "1 andar"
-    @Previewable  @State var ZonasClicaveis = [zonaClicavel(x_offset: 65, y_offset: -35, width: 115, height: 150, sala: 1, nome: "LMC")]
-    AndarView(andarAtual: $andarAtual, ZonasClicaveis: $ZonasClicaveis)
-}

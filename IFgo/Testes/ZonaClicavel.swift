@@ -1,10 +1,3 @@
-//
-//  regiaoClicavel.swift
-//  IFgo
-//
-//  Created by found on 15/07/25.
-//
-//
 
 import SwiftUI
 public struct zonaClicavel: View, Identifiable{
@@ -20,32 +13,31 @@ public struct zonaClicavel: View, Identifiable{
 
     
     public var body: some View{
-            
+        
         // Começo da zona Clicavel
         ZStack(alignment: .center){
             
             
             Color(.blue)
+            
+            // Estilização da região
+                .padding()
+                .buttonStyle(.borderedProminent)
+                .offset(x: x_offset, y: y_offset)
+                .opacity(0.01)
+                .frame(maxWidth: width, maxHeight: height)
+                .onTapGesture {
+                    goToAndar = true
+                    
+                }
+                .sheet(isPresented: $goToAndar){
+                    LabSheet(lab: Laboratorio.allLabs[sala])
+                }
             Text("\(nome)")
                 .multilineTextAlignment(.center)
+                .offset(x: x_offset, y: y_offset)
+                .bold()
         }
-            // Estilização da região
-            .padding()
-            .buttonStyle(.borderedProminent)
-            .offset(x: x_offset, y: y_offset)
-            .opacity(0.5)
-            .frame(maxWidth: width, maxHeight: height)
-            .onTapGesture {
-                goToAndar = true
-            }
-            .sheet(isPresented: $goToAndar){
-                LabSheet(lab: Laboratorio.allLabs[sala])
-            }
-        }
+    }
         // Fim da zona Clicavel
     }
-
-
-#Preview {
-    zonaClicavel(x_offset: 40, y_offset: -50, width: 110, height: 150, sala: 2, nome: "UGH")
-}
