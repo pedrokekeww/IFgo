@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct BarraDePesquisaView: View {
-    @Binding var mostrarHistorico: Bool
     @Binding var searchText: String
+    var mostrarHistorico: FocusState<Bool>.Binding
     var onSearch: (String) -> Void
     var placeholder: String
 
@@ -14,12 +14,9 @@ struct BarraDePesquisaView: View {
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .foregroundColor(.primary)
+                .focused(mostrarHistorico)
                 .onSubmit {
                     DispatchQueue.main.async { onSearch(searchText) }
-                }
-                .onChange(of: searchText){
-                    mostrarHistorico = false
-                    
                 }
         }
         .padding(10)

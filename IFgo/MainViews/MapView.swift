@@ -28,11 +28,11 @@ struct MapView: View {
     // Fazer a struct andar e fazer isso ser modular
     // Na real é só fazer um botao que faz o andarAtual voltar a ser "
     
-    @Binding var mostrarHistorico: Bool
     @Binding var searchText: String
     @State private var searchResult: String = ""
     let onSearch: (String) -> Void
     @Binding var selectedLab: Laboratorio?
+    @FocusState var mostrarHistorico: Bool
     
     @State var offset = CGSize.zero
     @State var lastOffset = CGSize.zero
@@ -106,21 +106,23 @@ struct MapView: View {
         .overlay{
             ZStack{
                 if (searchText.isEmpty && mostrarHistorico){
+                    
                     LabHistoryView(selectedLab: $selectedLab)
+//                        .onTapGesture{
+//                            
+//                        }
                         .offset(y:190)
                 }
                 BarraDePesquisaView(
-                    mostrarHistorico: $mostrarHistorico,
                     searchText: $searchText,
+                    mostrarHistorico: $mostrarHistorico,
                     onSearch: { query in
                         // Atualiza texto de resultado, opcional
                         // Dispara callback principal para abrir LabSheet
                         onSearch(query)
                     },
                     placeholder: "Pesquisar"
-                ).onTapGesture {
-                    mostrarHistorico = true
-                }
+                )
                 // Exibe resultado de busca auxiliar, se desejar
                 Text(searchResult)
                     .padding(.top, 4)
@@ -133,10 +135,12 @@ struct MapView: View {
             FrontViewBP(andarAtual: $andarAtual, ZonasClicaveis: $salasClicaveis)
                 .presentationDetents([.height(540)])
         }
+        .onTapGesture {
+            mostrarHistorico = false
+        }
         
- 
     }
-    
+        
 }
 
 
