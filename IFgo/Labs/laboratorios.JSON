@@ -5,7 +5,8 @@
         "bloco": "BP",
         "responsavel": "Fabio Caetano",
         "horario": "8h - 21h, segunda à sexta",
-        "descricao": ""
+        "descricao": "",
+        "id": 0
     },
     {
         "nome": "LERCA",
@@ -13,7 +14,8 @@
         "responsavel": "Andréa Cysne",
         "descricao": "Trabalho de pesquisas ambientais, energias renováveis e sustentabilidade.",
         "andar": 1,
-        "bloco": "BP"
+        "bloco": "BP",
+        "id": 1
     },
     {
         "nome": "LIMAR",
@@ -21,7 +23,8 @@
         "bloco": "BP",
         "responsavel": "Aline Carvalho de Oliveira",
         "descricao": "Análises fisico-químicas de águas residuárias, análises hidráulicas e tratamento de água.",
-        "horario": "8:00 às 18:00"
+        "horario": "8:00 às 18:00",
+        "id": 2
     },
     {
         "nome": "LMG",
@@ -29,7 +32,8 @@
         "bloco": "BP",
         "responsavel": "Marcos Porto",
         "horario": "7:30h - 17h, segunda à sexta",
-        "descricao": "O Laboratório de Modelagem Geotécnica (LMG) tem como objetivo auxiliar as disciplinas de Geotecnia dos cursos de Engenharia Civil, Edificações, Estradas e Saneamento com o desenvolvimento de modelos numéricos, físicos e materiais de aula."
+        "descricao": "O Laboratório de Modelagem Geotécnica (LMG) tem como objetivo auxiliar as disciplinas de Geotecnia dos cursos de Engenharia Civil, Edificações, Estradas e Saneamento com o desenvolvimento de modelos numéricos, físicos e materiais de aula.",
+        "id": 3
     },
     {
         "nome": "LMC",
@@ -37,7 +41,8 @@
         "bloco": "BP",
         "responsavel": "Indisponível",
         "horario": "Indisponível",
-        "descricao": "Indisponível"
+        "descricao": "Indisponível",
+        "id": 4
     },
     {
         "nome": "LIMAR",
@@ -45,7 +50,8 @@
         "bloco": "BP",
         "responsavel": "Aline Carvalho de Oliveira",
         "descricao": "Análises fisico-químicas de águas residuárias, análises hidráulicas e tratamento de água.",
-        "horario": "8:00 às 18:00"
+        "horario": "8:00 às 18:00",
+        "id": 5
     },
     {
         "nome": "LAPADA",
@@ -53,7 +59,8 @@
         "bloco": "BP",
         "responsavel": "Anaxa Goras, Mauro Oliveira e Reinaldo",
         "horario": "7:30h - 18:30h, segunda à sexta",
-        "descricao": "Espaço para desenvolvimento/pesquisa para bolsistas"
+        "descricao": "Espaço para desenvolvimento/pesquisa para bolsistas",
+        "id": 6
     },
     {
         "nome": "HASH?",
@@ -61,7 +68,8 @@
         "bloco": "BP",
         "responsavel": "Indisponível",
         "horario": "Indisponível",
-        "descricao": "Indisponível"
+        "descricao": "Indisponível",
+        "id": 7
     },
     {
         "nome": "LIA",
@@ -69,7 +77,8 @@
         "bloco": "BP",
         "responsavel": "Ajalmar",
         "horario": "7:30h - 20:00h, segunda à sexta",
-        "descricao": "Desenvolvimento de projetos de inovação da EMBRAPII envolvendo back-end e front-end"
+        "descricao": "Desenvolvimento de projetos de inovação da EMBRAPII envolvendo back-end e front-end",
+        "id": 8
     },
     {
         "nome": "LAPISCO",
@@ -77,7 +86,8 @@
         "bloco": "BP",
         "responsavel": "Pedro Pedrosa",
         "horario": "7:30h - 20:00h, segunda à sexta",
-        "descricao": "O Laboratório de Processamento de Imagens, Sinais e Computação (LAPISCO) concentra suas áreas de pesquisa principalmente em Processamento Digital de Imagens, Sinais e Computação Aplicada em diversas áreas envolvendo Inteligência Artificial e aprendizado de máquina."
+        "descricao": "O Laboratório de Processamento de Imagens, Sinais e Computação (LAPISCO) concentra suas áreas de pesquisa principalmente em Processamento Digital de Imagens, Sinais e Computação Aplicada em diversas áreas envolvendo Inteligência Artificial e aprendizado de máquina.",
+        "id": 9
     },
     {
         "nome": "LDS",
@@ -85,7 +95,8 @@
         "bloco": "BP",
         "responsavel": "Antônio Barros Serra",
         "horario": "8h - 17h, segunda à sexta",
-        "descricao": "Embarca Tech. Projeto de ensino voltado para sistemas embarcados."
+        "descricao": "Embarca Tech. Projeto de ensino voltado para sistemas embarcados.",
+        "id": 10
     },
     {
         "nome": "GDESTE",
@@ -93,7 +104,8 @@
         "bloco": "BP",
         "responsavel": "Jorge Frederickson, Carlos Maurício",
         "horario": "8h - 18h, segunda à sexta",
-        "descricao": "Desenvolvimento de sistemas embarcados, desenvolvimento full-stack e modelagem e impressão 3D."
+        "descricao": "Desenvolvimento de sistemas embarcados, desenvolvimento full-stack e modelagem e impressão 3D.",
+        "id": 11
     },
     {
         "nome": "LPDS",
@@ -101,7 +113,8 @@
         "bloco": "BP",
         "responsavel": "Auzir Ripardo",
         "horario": "7:30h - 22h, segunda à sexta",
-        "descricao": "Pesquisa e desenvolvimento de sistemas embarcados voltados para fisioterapia"
+        "descricao": "Pesquisa e desenvolvimento de sistemas embarcados voltados para fisioterapia",
+        "id": 12
     },
     {
         "nome": "Fotônica",
@@ -109,7 +122,8 @@
         "bloco": "BP",
         "responsavel": "Glendo de Freitas",
         "horario": "7:30h - 20h, segunda à sexta",
-        "descricao": "Sensoriamento Óptico, desenvolvimento de sensores ópticos. Nano-estrutura nanofotônica, IA, comunicações ópticas, sistemas embarcados e química."
+        "descricao": "Sensoriamento Óptico, desenvolvimento de sensores ópticos. Nano-estrutura nanofotônica, IA, comunicações ópticas, sistemas embarcados e química.",
+        "id": 13
     },
     {
         "nome": "Apple Academy (Campfire)",
@@ -117,7 +131,8 @@
         "bloco": "BP",
         "responsavel": "Carlos Hairon, Antônio Barros Serra",
         "horario": "8h - 18h, segunda à sexta",
-        "descricao": "Laboratório Apple focado em desenvolvimento de aplicativos para os dispositivos Apple."
+        "descricao": "Laboratório Apple focado em desenvolvimento de aplicativos para os dispositivos Apple.",
+        "id": 14
     },
     {
         "nome": "Apple Academy (Sandbox)",
@@ -125,6 +140,7 @@
         "bloco": "BP",
         "responsavel": "Carlos Hairon, Antônio Barros Serra",
         "horario": "8h - 18h, segunda à sexta",
-        "descricao": "Laboratório Apple focado em desenvolvimento de aplicativos para os dispositivos Apple."
+        "descricao": "Laboratório Apple focado em desenvolvimento de aplicativos para os dispositivos Apple.",
+        "id": 15
     }
 ]

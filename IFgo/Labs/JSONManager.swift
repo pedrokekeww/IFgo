@@ -8,7 +8,7 @@
 import Foundation
 
 struct Laboratorio: Codable, Identifiable, Hashable{
-    public var id: String { nome }
+    public var id: Int
     let nome: String
     let andar: Int
     let bloco: String

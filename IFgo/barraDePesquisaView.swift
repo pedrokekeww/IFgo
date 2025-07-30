@@ -2,6 +2,7 @@ import SwiftUI
 
 struct BarraDePesquisaView: View {
     @Binding var searchText: String
+    var mostrarHistorico: FocusState<Bool>.Binding
     var onSearch: (String) -> Void
     var placeholder: String
 
@@ -14,6 +15,7 @@ struct BarraDePesquisaView: View {
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .foregroundColor(.white)
+                    .focused(mostrarHistorico)
                     .onSubmit {
                         DispatchQueue.main.async { onSearch(searchText) }
                     }

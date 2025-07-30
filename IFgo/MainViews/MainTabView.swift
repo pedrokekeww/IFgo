@@ -42,3 +42,8 @@ struct MainTabView: View {
     
     /// (Método removido: computeGroupedLabs encerrada no computed var grouped)
 }
+
+#Preview{
+    MainTabView()
+        .modelContainer(for: [LabRef.self])
+}

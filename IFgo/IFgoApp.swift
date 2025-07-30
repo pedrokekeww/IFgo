@@ -14,6 +14,7 @@ struct IFgoApp: App {
     var body: some Scene {
         WindowGroup {
             MainTabView()
+                .modelContainer(for: [LabRef.self])
         }
     }
 }

@@ -73,3 +73,15 @@ struct LabSheet: View
         .cornerRadius(12) // Cantos arredondados da sheet
     }
 }
+
+#Preview{
+    LabSheet(lab: Laboratorio(
+        id: 30,
+        nome: "LMC 4",
+        andar: 2,
+        bloco: "Bloco de Pesquisa",
+        responsavel: "Cayque",
+        horario: "8h às 12h",
+        descricao: "É um bloco de comedores de agua"
+    ))
+}

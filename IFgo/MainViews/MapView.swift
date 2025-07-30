@@ -15,6 +15,9 @@ struct MapView: View {
     let onSearch: (String) -> Void
     @State private var showFrontView = false
     @State private var andarAtual = "ex_top_BP"
+    @Binding var selectedLab: Laboratorio?
+    @FocusState var mostrarHistorico: Bool
+    @State var mostrarFrontView: Bool = false
     
     @State var offset = CGSize.zero
     @State var lastOffset = CGSize.zero
@@ -40,15 +43,6 @@ struct MapView: View {
                 .ignoresSafeArea()
                 .overlay()
             {
-                VStack(alignment: .leading, spacing: 8) {
-                    BarraDePesquisaView(
-                        searchText: $searchText,
-                        onSearch: { query in
-                            onSearch(query)
-                        },
-                        placeholder: "Pesquisar laboratórios"
-                    )
-                    
                     if !suggestions.isEmpty {
                         VStack(spacing: 4) {
                             ForEach(suggestions) { lab in
@@ -130,14 +124,40 @@ struct MapView: View {
                         
                     )
                 }
-                
-                .sheet(isPresented: $showFrontView) {
-                    FrontViewBP(andarAtual: $andarAtual, ZonasClicaveis: $salasClicaveis)
-                        .presentationDetents([.height(540)])
-                }
+                .overlay{
+                     ZStack{
+                         if (searchText.isEmpty && mostrarHistorico){
+                             ZStack{
+                                 LabHistoryView(selectedLab: $selectedLab)
+                                     .offset(y:190)
+                                 Button(action: {
+                                     mostrarHistorico = true
+                                 }) {
+                                     Color.clear
+                                 }
+                             }
+                         }
+                         BarraDePesquisaView(
+                             searchText: $searchText,
+                             mostrarHistorico: $mostrarHistorico,
+                             onSearch: { query in
+                                 // Atualiza texto de resultado, opcional
+                                 // Dispara callback principal para abrir LabSheet
+                                 onSearch(query)
+                             },
+                             placeholder: "Pesquisar"
+                         )
+                     }
+                     .offset(y:-300)
+                 }
+                 .sheet(isPresented: $mostrarFrontView){
+                     //Para as outras views terem acesso a variavel andar Atual, precisei passa-la
+                     //como binding para essas views.
+                     FrontViewBP(andarAtual: $andarAtual, ZonasClicaveis: $salasClicaveis)
+                         .presentationDetents([.height(540)])
+                 }
             }
         }
-    }
 
     // Agrupa laboratórios por bloco e andar
     private func computeGroupedLabs() -> [String: [Int: [Laboratorio]]] {

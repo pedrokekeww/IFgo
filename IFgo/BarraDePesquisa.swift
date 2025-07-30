@@ -1,5 +1,6 @@
 import SwiftUI
 import Foundation
+import SwiftData
 extension String {
     /// Remove acentos, ignora maiúsculas/minúsculas e espaços extras.
     var normalizedForSearch: String {
@@ -8,20 +9,20 @@ extension String {
     }
 }
 struct ContentView: View {
+    @Environment(\.modelContext) var modelContext
+    @Query var historicoLabs: [LabRef]
     @State private var searchText: String = ""
-    @State private var selectedLab: Laboratorio?
+    @State var selectedLab: Laboratorio?
     @State private var showNotFoundAlert = false
+    
 
     var body: some View {
         NavigationStack {
             // Envolve o MapView, que agora recebe binding e callback
-            MapView(
-                searchText: $searchText,
-                onSearch: searchAndPresent
-            )
+            MapView(searchText: $searchText, onSearch: searchAndPresent, selectedLab: $selectedLab)
             .sheet(item: $selectedLab) { lab in
                 LabSheet(lab: lab)
-                    .presentationDetents([.medium])
+                    .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.visible)
                     .presentationBackground(.black)
                     .padding()
@@ -45,6 +46,10 @@ struct ContentView: View {
         if let match = Laboratorio.allLabs
             .first(where: { $0.nome.normalizedForSearch.contains(termo) }) {
             selectedLab = match
+            
+            if (!historicoLabs.contains(LabRef(labIndex: match.id))){
+                modelContext.insert(LabRef(labIndex: match.id))
+            }
         } else {
             showNotFoundAlert = true
         }
@@ -52,5 +57,7 @@ struct ContentView: View {
 }
 
 #Preview{
-    ContentView()
+    //@Previewable @State var mostrarHistorico = false
+        ContentView()
+            .modelContainer(for: [LabRef.self])
 }
