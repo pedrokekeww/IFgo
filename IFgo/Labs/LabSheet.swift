@@ -38,7 +38,7 @@ struct LabSheet: View
                     }
                     HStack(spacing: 12)
                     {
-                        Spacer().frame(width: 26)
+                        Image(systemName: "figure.walk").foregroundColor(.green).font(.system(size: 24))
                         Text("Andar:").colorInvert()
                             .fontWeight(.semibold)
                         Text("\(lab.andar)").foregroundColor(Color(white: 0.78))
@@ -69,8 +69,9 @@ struct LabSheet: View
 
             Spacer()
         }
-        .background(Color.black) // Fundo da sheet
-        .cornerRadius(12) // Cantos arredondados da sheet
+        .containerRelativeFrame([.horizontal, .vertical])
+        .ignoresSafeArea() // Fundo da sheet
+        .background(Color.black)
     }
 }
 

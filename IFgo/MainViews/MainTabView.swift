@@ -13,19 +13,31 @@ struct MainTabView: View {
         return dict
     }
     
+    init(){
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+    }
+    
     var body: some View {
         TabView {
             NavigationStack {
+
                 ContentView()
                     .sheet(item: $selectedLab) { lab in
                         LabSheet(lab: lab)
-                            .presentationDetents([.medium])
+                            .presentationDetents([.medium, .large])
                             .presentationDragIndicator(.visible)
                             .padding()
                     }
             }
+            .toolbarBackgroundVisibility(.visible, for: .tabBar)
+            .toolbarBackground(Color.black, for: .tabBar)
             .tabItem {
-                Label("Mapa", systemImage: "safari.fill")
+                Label(title: {
+                    Text("Mapa")
+                }, icon: {
+                    Image(systemName: "safari.fill")
+                        .renderingMode(.template)
+                })
             }
             
             NavigationStack {
@@ -33,11 +45,14 @@ struct MainTabView: View {
                     selectedLab = lab
                 })
             }
+            .toolbarBackgroundVisibility(.visible, for: .tabBar)
+            .toolbarBackground(Color.black, for: .tabBar)
             .tabItem {
                 Label("Salas", systemImage: "list.bullet")
+
             }
         }
-        .background(Color(.systemBackground))
+
     }
     
     /// (Método removido: computeGroupedLabs encerrada no computed var grouped)
