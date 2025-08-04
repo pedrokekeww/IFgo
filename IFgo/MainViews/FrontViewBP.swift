@@ -6,6 +6,7 @@ struct FrontViewBP: View{
     // Pra deixar modular é só criar algumas variáveis
     @Binding var andarAtual: String
     @Binding var ZonasClicaveis: [zonaClicavel]
+    @Binding var tituloTabItem: String
     //Aqui ta conectando o andarAtual do MapView a essa view
     
     var body: some View{
@@ -24,19 +25,22 @@ struct FrontViewBP: View{
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                         
-                        BotaoAndar(nome: "5 andar",
+                        BotaoAndar(nome: "5º andar",
                                    andar: "4&5_andar",
                                    descricao: "Apple Developer Academy",
                                    salas: [zonaClicavel(x_offset: 13, y_offset: -11, width: 377, height: 200, sala: 14, nome: "APPLE DEVELOPER ACADEMY (SANDBOX)")],
                                    andarAtual: $andarAtual,
-                                   ZonasClicaveis: $ZonasClicaveis)
-                        BotaoAndar(nome: "4 andar",
+                                   ZonasClicaveis: $ZonasClicaveis,
+                                   tituloTabItem: $tituloTabItem
+                        )
+                        BotaoAndar(nome: "4º andar",
                                    andar: "4&5_andar",
                                    descricao: "Apple Developer Academy",
                                    salas: [zonaClicavel(x_offset: 13, y_offset: -11, width: 377, height: 200, sala: 13, nome: "APPLE DEVELOPER ACADEMY (CAMPFIRE)")],
                                    andarAtual: $andarAtual,
-                                   ZonasClicaveis: $ZonasClicaveis)
-                        BotaoAndar(nome: "3 andar",
+                                   ZonasClicaveis: $ZonasClicaveis,
+                                   tituloTabItem: $tituloTabItem)
+                        BotaoAndar(nome: "3º andar",
                                    andar: "2&3_andar",
                                    descricao: "LDS, LPDS, GDESTE...",
                                    salas:
@@ -48,8 +52,9 @@ struct FrontViewBP: View{
                                         zonaClicavel(x_offset: -110, y_offset: -10, width: 130, height: 200, sala: 9, nome: "LDS")
                                     ],
                                    andarAtual: $andarAtual,
-                                   ZonasClicaveis: $ZonasClicaveis)
-                        BotaoAndar(nome: "2 andar",
+                                   ZonasClicaveis: $ZonasClicaveis,
+                                   tituloTabItem: $tituloTabItem)
+                        BotaoAndar(nome: "2º andar",
                                    andar: "2&3_andar",
                                    descricao: "LIA, LAPISCO, LAPADA...",
                                    salas:
@@ -61,8 +66,9 @@ struct FrontViewBP: View{
                                             nome: "LAPADA")
                                     ],
                                    andarAtual: $andarAtual,
-                                   ZonasClicaveis: $ZonasClicaveis)
-                        BotaoAndar(nome: "1 andar",
+                                   ZonasClicaveis: $ZonasClicaveis,
+                                   tituloTabItem: $tituloTabItem)
+                        BotaoAndar(nome: "1º andar",
                                    andar: "1_andar",
                                    descricao: "LMC, LMG, LERCA...",
                                    salas:
@@ -74,7 +80,8 @@ struct FrontViewBP: View{
                                         zonaClicavel(x_offset: -110, y_offset: -10, width: 130, height: 200, sala: 0, nome: "LPQA")
                                     ],
                                    andarAtual: $andarAtual,
-                                   ZonasClicaveis: $ZonasClicaveis)
+                                   ZonasClicaveis: $ZonasClicaveis,
+                                   tituloTabItem: $tituloTabItem)
                         
                     }
                     .padding([.top], 10)

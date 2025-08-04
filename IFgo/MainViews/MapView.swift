@@ -8,6 +8,7 @@ struct MapView: View {
     let onSearch: (String) -> Void
     @State private var showFrontView = false
     @State private var andarAtual = "ex_top_BP"
+    @State var tituloTabItem: String = "Navegação"
     @Binding var selectedLab: Laboratorio?
     @FocusState var mostrarHistorico: Bool
     @State var mostrarFrontView: Bool = false
@@ -94,6 +95,7 @@ struct MapView: View {
                                 .foregroundColor(.white)
                                 .onTapGesture {
                                     andarAtual = "ex_top_BP"
+                                    tituloTabItem = "Navegação"
                                     // Isso faz com que pare de mostrar a imagem, ja que nao existe
                                     // imagem com nome vazio
                                 }
@@ -147,7 +149,7 @@ struct MapView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Text("Navegação")
+                        Text(tituloTabItem)
                             .font(.system(size: 32))
                             .foregroundStyle(.white)
                             .bold()
@@ -163,7 +165,8 @@ struct MapView: View {
             //como binding para essas views.
             FrontViewBP(
                 andarAtual: $andarAtual,
-                ZonasClicaveis: $salasClicaveis
+                ZonasClicaveis: $salasClicaveis,
+                tituloTabItem: $tituloTabItem
             )
             .presentationDetents([.height(540)])
         }

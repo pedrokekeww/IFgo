@@ -10,13 +10,13 @@ struct BarraDePesquisaView: View {
         ZStack{
             HStack {
                 Image(systemName: "magnifyingglass")
-                    .foregroundColor(.white)
+                .foregroundColor(.white)
                 TextField(placeholder, text: $searchText)
+                    .colorScheme(.dark)
                     .foregroundStyle(.white)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .focused(mostrarHistorico)
-                    .tint(.white)
                     .onSubmit {
                         DispatchQueue.main.async { onSearch(searchText) }
                     }

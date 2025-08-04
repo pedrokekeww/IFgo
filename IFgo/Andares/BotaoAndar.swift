@@ -11,14 +11,16 @@ struct BotaoAndar: View{
     @State var salas: [zonaClicavel]
     @Binding var ZonasClicaveis: [zonaClicavel]
     @Binding var andarAtual: String
+    @Binding var tituloTabItem: String
     
-    init(nome: String, andar: String, descricao:String, salas: [zonaClicavel], andarAtual: Binding<String>, ZonasClicaveis: Binding<[zonaClicavel]>){
+    init(nome: String, andar: String, descricao:String, salas: [zonaClicavel], andarAtual: Binding<String>, ZonasClicaveis: Binding<[zonaClicavel]>, tituloTabItem: Binding<String>){
         self.nome = nome
         self.andar = andar
         self.descricao = descricao
         self.salas = salas
         self._andarAtual = andarAtual
         self._ZonasClicaveis = ZonasClicaveis
+        self._tituloTabItem = tituloTabItem
         
     }
     
@@ -41,6 +43,7 @@ struct BotaoAndar: View{
     func atribuir_valores(){
         andarAtual = andar
         ZonasClicaveis = salas
+        tituloTabItem = nome
         fechar()
     }
 }
