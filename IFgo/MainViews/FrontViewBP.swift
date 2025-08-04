@@ -38,7 +38,7 @@ struct FrontViewBP: View{
                                    ZonasClicaveis: $ZonasClicaveis)
                         BotaoAndar(nome: "3 andar",
                                    andar: "2&3_andar",
-                                   descricao: "LMC, LMC, LMC, LMC...",
+                                   descricao: "LDS, LPDS, GDESTE...",
                                    salas:
                                     [
                                         zonaClicavel(x_offset: 147, y_offset: -35, width: 112, height: 153, sala: 12, nome: "FOTÔNICA"),
@@ -51,7 +51,7 @@ struct FrontViewBP: View{
                                    ZonasClicaveis: $ZonasClicaveis)
                         BotaoAndar(nome: "2 andar",
                                    andar: "2&3_andar",
-                                   descricao: "LMC, LMC, LMC, LMC...",
+                                   descricao: "LIA, LAPISCO, LAPADA...",
                                    salas:
                                     [
                                         zonaClicavel(x_offset: 147, y_offset: -35, width: 112, height: 153, sala: 8, nome: "LAPISCO"),
@@ -64,7 +64,7 @@ struct FrontViewBP: View{
                                    ZonasClicaveis: $ZonasClicaveis)
                         BotaoAndar(nome: "1 andar",
                                    andar: "1_andar",
-                                   descricao: "LMC, LMC, LMC, LMC...",
+                                   descricao: "LMC, LMG, LERCA...",
                                    salas:
                                     [
                                         zonaClicavel(x_offset: 160, y_offset: -13, width: 85, height: 113, sala: 4, nome: "LMC"),

@@ -97,7 +97,7 @@ struct MapView: View {
                                     // Isso faz com que pare de mostrar a imagem, ja que nao existe
                                     // imagem com nome vazio
                                 }
-                                .offset(x: -150, y: -250)
+                                .offset(x: -150, y: -125)
                                 .buttonStyle(.borderedProminent)
                             Color(.blue)
                             .onTapGesture {

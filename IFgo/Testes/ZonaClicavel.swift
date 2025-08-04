@@ -32,6 +32,7 @@ public struct zonaClicavel: View, Identifiable{
                 }
                 .sheet(isPresented: $goToAndar){
                     LabSheet(lab: Laboratorio.allLabs[sala])
+                        .presentationDetents([.medium, .large])
                 }
             Text("\(nome)")
                 .multilineTextAlignment(.center)
