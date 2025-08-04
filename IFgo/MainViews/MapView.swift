@@ -101,7 +101,7 @@ struct MapView: View {
                                 .buttonStyle(.borderedProminent)
                             Color(.blue)
                             .onTapGesture {
-                                showFrontView = true
+                                mostrarFrontView = true
                             }
                             .frame(width:80, height: 80)
                             .border(.black, width:4)
