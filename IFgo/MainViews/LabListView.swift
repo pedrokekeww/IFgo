@@ -20,8 +20,8 @@ struct LabsListView: View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 4) {      // <--- espaçamento entre células reduzido
                 ForEach(blockFloors, id: \.block) { section in
-                    Text(section.block)
-                        .font(.headline)
+                    Text("Bloco De Pesquisa")
+                        .font(.system(size: 20))
                         .foregroundColor(.white)
                         .padding(.vertical, 8)
                         .padding(.horizontal, 16)
@@ -51,8 +51,8 @@ struct LabsListView: View {
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Text("Lista de Salas")
-                    .font(.system(size: 32))
+                Text("Salas")
+                    .font(.system(size: 30))
                     .foregroundStyle(.white)
                     .bold()
             }
