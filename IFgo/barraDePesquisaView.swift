@@ -16,6 +16,7 @@ struct BarraDePesquisaView: View {
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     .focused(mostrarHistorico)
+                    .tint(.white)
                     .onSubmit {
                         DispatchQueue.main.async { onSearch(searchText) }
                     }
