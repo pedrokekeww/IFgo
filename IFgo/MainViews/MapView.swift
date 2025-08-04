@@ -35,6 +35,7 @@ struct MapView: View {
                 .ignoresSafeArea()
                 .overlay {
                     ZStack {
+                        
                         if searchText.isEmpty && mostrarHistorico {
                             ZStack {
                                 LabHistoryView(selectedLab: $selectedLab)
@@ -98,6 +99,15 @@ struct MapView: View {
                                 }
                                 .offset(x: -150, y: -250)
                                 .buttonStyle(.borderedProminent)
+                            Color(.blue)
+                            .onTapGesture {
+                                showFrontView = true
+                            }
+                            .frame(width:80, height: 80)
+                            .border(.black, width:4)
+                            .background(.blue)
+                            .opacity(0.2)
+                            .offset(x: 24, y: 110)
                         }
                     }
                     // .rotationEffect(.degrees(offset.width / 10.0)) //Vai usar a variavel offset pra
@@ -144,6 +154,7 @@ struct MapView: View {
                     }
                 }
                 .toolbarColorScheme(.dark, for: .navigationBar)
+            
         }
 
         
